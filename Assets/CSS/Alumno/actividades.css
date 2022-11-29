@@ -1,0 +1,90 @@
+/*table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+*/
+table.actividades-status {
+   /* border: 1px solid gray;*/
+    width: 90%;
+    margin: auto;
+    padding-top: 3%;
+}
+
+td.status-data {
+    border: 1px solid gray;
+    width: 25%;
+    padding: 20px;
+}
+
+table.actividades-list {
+    width: 70%;
+    margin: auto;
+    
+    text-align: center;
+}
+
+table.actividades-list th{
+    border: 1px solid gray; 
+    padding: 10px;
+    background-color: #7DCEA0;
+    color: white;
+}
+
+table.actividades-list td{
+    border: 1px solid gray; 
+    
+}
+
+
+tbody.actividades-list-container {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+td.act-data {
+    padding: 10px;
+   /* border: 1px solid gray; */
+/*
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray; */
+}
+
+td.short {
+    width: 20%;
+    text-align: center;
+}
+
+td.long {
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button {
+    padding: 5px 40px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    display: block;
+    margin: auto;
+    height: 30px;
+    width: 100%;
+}
+
+button.turn-in {
+    background-color: #BEA52A;
+}
+
+button.turn-in:hover {
+    background-color: #999666;
+    cursor: pointer;
+}
+
+button.turned-in {
+    background-color: #00BB55;
+}
+
+button.turned-in:hover {
+    background-color: #11CC66;   
+}
