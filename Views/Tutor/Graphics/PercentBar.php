@@ -9,7 +9,8 @@ require_once "Displayable.php";
 /**
  * Grados para el formato condicional.
  */
-enum grade {
+enum grade
+{
     case LOW;
     case HIGH;
 }
@@ -19,7 +20,8 @@ enum grade {
  * 
  * @author Santi <ssotov001@alumno.uaemex.mx>
  */
-Class PercentBar implements Displayable{
+class PercentBar implements Displayable
+{
     /**
      * Valor del relleno de la barra de porcentaje.
      * 
@@ -44,8 +46,9 @@ Class PercentBar implements Displayable{
      * 
      * @return PercentBar
      */
-    function __construct($value) {
-        $this -> value = $value;
+    function __construct($value)
+    {
+        $this->value = $value;
 
         $this->grade = $value > 50 ? grade::HIGH : grade::LOW;
     }
@@ -56,14 +59,14 @@ Class PercentBar implements Displayable{
      * Implementacion del metodo display de la interfaz Displayable. 
      * Renderiza la imagen de la barra de porcentaje considerando el formato condicional.
      */
-    function display() {
-        ?>
-            <div class="percent-bar percent-bar-<?php echo $this->grade == grade::HIGH ? "high" : "low"; ?>">
-                <div class="percent-fill percent-fill-<?php echo $this->grade == grade::HIGH ? "high" : "low"; ?>" 
-                style="width:<?php echo $this -> value; ?>%">
-                    <?php echo $this -> value."%"; ?>
-                </div>
+    function display()
+    {
+?>
+        <div class="percent-bar percent-bar-<?php echo $this->grade == grade::HIGH ? "high" : "low"; ?>">
+            <div class="percent-fill percent-fill-<?php echo $this->grade == grade::HIGH ? "high" : "low"; ?>" style="width:<?php echo $this->value; ?>%">
+                <?php echo $this->value."%"; ?>
             </div>
-        <?php
+        </div>
+<?php
     }
 }

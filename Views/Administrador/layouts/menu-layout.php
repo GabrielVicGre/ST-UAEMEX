@@ -15,10 +15,17 @@
             </a>
         </li>
         <li class="nav-item mx-1">
+            <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'consultar' ? 'selected'  : '' ?>" 
+                href="Views/Administrador/consultar.php">
+                <i class="bi bi-card-list mx-2"></i>
+                Consultar
+            </a>
+        </li>
+        <li class="nav-item mx-1">
             <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'status' ? 'selected'  : '' ?>" 
                 href="Views/Administrador/status.php">
                 <i class="bi bi-bar-chart-line-fill mx-2"></i>
-                Status
+                Estatus
             </a>
         </li>
         <li class="nav-item mx-1">
@@ -28,7 +35,7 @@
                 Plan de trabajo
             </a>
         </li>
-        <li class="nav-item mx-1">
+        <li class="nav-item mx-1 d-none">
             <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'respaldar' ? 'selected'  : '' ?>" 
                 href="Views/Administrador/respaldar.php">
                 <i class="bi bi-cloud-download-fill  mx-2"></i>

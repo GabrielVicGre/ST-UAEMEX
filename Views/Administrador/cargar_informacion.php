@@ -5,6 +5,11 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador" 
 }else{
     $_SESSION['seccion_menu'] = 'cargar_informacion';
 }
+
+if(!isset($_GET['tab'])) {
+    $_GET['tab'] = "alumnos";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -25,20 +30,8 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador" 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h4 class="h5">Cargar Información</h4>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Share
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Export
-                            </button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
-                    </div>
+                    <?php include "layouts/user-layout.php"; ?>
+
                 </div>
 
                 <div class="pt-3">
@@ -46,53 +39,71 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador" 
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs" id="myTab">
                                 <li class="nav-item">
-                                    <a href="#home" style="border-radius: 5px 5px 0px 0px !important; color: gray;" class="nav-link active" data-bs-toggle="tab">Alumnos inscritos</a>
+                                    <a href="#alumnos" style="border-radius: 5px 5px 0px 0px !important; color: gray;" 
+                                    class="nav-link <?php echo $_GET['tab'] == "alumnos" ? "active" : ""?>" data-bs-toggle="tab">Alumnos inscritos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#profile" style="border-radius: 5px 5px 0px 0px !important; color: gray;" class="nav-link" data-bs-toggle="tab">Profile</a>
+                                    <a href="#tutores" style="border-radius: 5px 5px 0px 0px !important; color: gray;" 
+                                    class="nav-link <?php echo $_GET['tab'] == "tutores" ? "active" : ""?>" data-bs-toggle="tab">Tutores</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#messages" style="border-radius: 5px 5px 0px 0px !important; color: gray;" class="nav-link" data-bs-toggle="tab">Messages</a>
+                                    <a href="#alumno-tutor" style="border-radius: 5px 5px 0px 0px !important; color: gray;" 
+                                    class="nav-link <?php echo $_GET['tab'] == "alumno-tutor" ? "active" : ""?>" data-bs-toggle="tab">Alumno - Tutor</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="card-body">
                             <div class="tab-content">
-                                <div class="tab-pane fade show active" id="home">
+                                <div class="tab-pane fade <?php echo $_GET['tab'] == "alumnos" ? "show active" : ""?>" id="alumnos">
                                     <h5 class="card-title">Alumnos Inscritos</h5>
                                     <p class="card-text">Asegurate que el archivo que subas tenga la extención .csv</p>
                                     <div>
-                                        <form enctype="multipart/form-data" action="Controllers/Administrador/uploadAlumnosInscritos.php" method="POST">
-                                            <input type="file" name="csv_file"> <br>
-                                            <button type="submit" class="mt-4 btn btn-secondary">Cargar archivo <i class="bi bi-cloud-arrow-up-fill mx-2"></i></button>
+                                        <?php $id = 0;?>
+                                        <form id="drag-and-drop-form-<?php echo $id;?>" enctype="multipart/form-data" action="Controllers/Administrador/uploadAlumnosInscritos.php" method="POST">
+                                        <?php
+                                            include "layouts/drag_and_drop_csv.php";
+                                        ?>
                                         </form>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="profile">
-                                    <h5 class="card-title">Profile tab content</h5>
+                                <div class="tab-pane fade <?php echo $_GET['tab'] == "tutores" ? "show active" : ""?>" id="tutores">
+                                    <h5 class="card-title">Tutores</h5>
                                     <p class="card-text">Asegurate que el archivo que subas tenga la extención .csv</p>
-                                    <a href="#" class="btn btn-secondary">Cargar archivo <i class="bi bi-cloud-arrow-up-fill mx-2"></i></a>
+                                    <div>
+                                        <?php $id = 1;?>
+                                        <form id="drag-and-drop-form-<?php echo $id;?>" enctype="multipart/form-data" action="Controllers/Administrador/uploadTutores.php" method="POST">
+                                        <?php
+                                            include "layouts/drag_and_drop_csv.php";
+                                        ?>
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="messages">
-                                    <h5 class="card-title">Messages tab content</h5>
+                                <div class="tab-pane fade <?php echo $_GET['tab'] == "alumno-tutor" ? "show active" : ""?>" id="alumno-tutor">
+                                    <h5 class="card-title">Alumno - Tutor</h5>
                                     <p class="card-text">Asegurate que el archivo que subas tenga la extención .csv</p>
-                                    <a href="#" class="btn btn-secondary">Cargar archivo <i class="bi bi-cloud-arrow-up-fill mx-2"></i></a>
+                                    <div>
+                                        <?php $id = 2;?>
+                                        <form id="drag-and-drop-form-<?php echo $id;?>" enctype="multipart/form-data" action="Controllers/Administrador/uploadAlumnoTutor.php" method="POST">
+                                        <?php
+                                            include "layouts/drag_and_drop_csv.php";
+                                        ?>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
-
             </main>
-
         </div>
     </div>
-
 </body>
 
 
-
+<script src="Assets/Scripts/drag_and_drop_csv.js"></script>
+<script>
+    new DragAndDrop(0);
+    new DragAndDrop(1);
+    new DragAndDrop(2);
+</script>
 </html>

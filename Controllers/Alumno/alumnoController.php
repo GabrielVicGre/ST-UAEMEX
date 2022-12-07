@@ -21,4 +21,8 @@ class alumnoController {
     function getDatosUsuarioAlumno($id_user) {
         return $this->model_Usuario->getDatosDeUsuarioAlumno($id_user);
     }
+
+    function getDatosTutorDeAlumno($id_user){
+        return $this->model_Usuario->getDatosTutorDeAlumno($id_user);
+    }
 }

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
@@ -9,6 +8,7 @@
     <link rel="stylesheet" href="Assets/CSS/login.css">
     <link rel="stylesheet" href="Assets/CSS/inputs.css">
     <link rel="stylesheet" href="Assets/CSS/loginResponsive.css">
+    <link rel="icon" href="Assets/Images/ta.jpg" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="login-panel shadow-box">
-            <h3 class="titLogin">Sistema de Actividades de <b>Tutoría XD</b></h3>
+            <h3 class="titLogin">Sistema de Actividades de <b>Tutoría</b></h3>
             <form action="Config/Ingresar.php" method="POST">
                 <div class="imgcontainer">
                     <img class="imgLogin" src="https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-gris.png" alt="Avatar" class="avatar">
@@ -64,6 +64,4 @@
 
 </body>
 
-
 </html>
-

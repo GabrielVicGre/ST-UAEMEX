@@ -16,7 +16,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
 </head>
 
 <body>
-<?php include "layouts/header-layout.php"; ?>
+    <?php include "layouts/header-layout.php"; ?>
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
@@ -25,31 +25,26 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h4 class="h5">Ayuda</h4>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Share
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Export
-                            </button>
+                    <?php include "layouts/user-layout.php"; ?>
+                </div>
+                <div class="containeer px-5 py-2">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            Ayuda para Tutores
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
+                        <div class="card-body text-center">
+                            <video src="Assets/Videos/Tutor/VID_TUTOR.mp4" class="img-fluid" style="width: 75%;" controls autoplay loop></video>
+                        </div>
+                        <div class="card-footer text-center">
+                            Semestre 2022B
+                        </div>
                     </div>
                 </div>
-
-               
-
-
             </main>
         </div>
     </div>
 
 
-  
 </body>
 
 </html>

@@ -8,14 +8,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
 <link href="Assets/CSS/dashboard.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="Assets/CSS/Alumno/entrega_actividad.css">
 <link rel="stylesheet" href="Assets/CSS/drag_and_drop_2.css">
+<link rel="stylesheet" href="Assets/CSS/Alumno/index.css">
+<link rel="icon" href="Assets/Images/ta.jpg" />
 
-<!--
-<link rel="stylesheet" href="Assets/CSS/Alumno/actividades.css">-->
+
+<link rel="stylesheet" href="Assets/CSS/Alumno/actividades.css">
 
 <!--<link rel="stylesheet" href="Assets/CSS/index.css">
 <link rel="stylesheet" href="Assets/CSS/Alumno/index.css">-->
-<!--<link rel="stylesheet" href="Assets/CSS/Alumno/top-nav.css">
 
-<link rel="stylesheet" href="Assets/CSS/scroll.css">-->
+<link rel="stylesheet" href="Assets/CSS/scroll.css">

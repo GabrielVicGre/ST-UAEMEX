@@ -44,6 +44,20 @@ class UsuarioIniciar {
 
     }
 
+    public function getDatosTutorDeAlumno($id_usuario) {
+        global $connection;  
+        $datosdelUsuario = array(); 
+        $query = "SELECT  t.nombre as tutor
+                  FROM tutor t, alumno a 
+                  WHERE t.id_tutor = a.id_tutor AND a.id_usuario =".$id_usuario;                 
+        $result = $connection->query($query);
+        while($act = $result->fetch_array(MYSQLI_ASSOC)) {
+            array_push($datosdelUsuario, $act);
+        }
+        return $datosdelUsuario;
+        
+    }
+
 
   
 }

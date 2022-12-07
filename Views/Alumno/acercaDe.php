@@ -1,8 +1,7 @@
-
 <?php
 
 session_start();
-if ( empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno" ) {
+if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno") {
     header("Location: ../../index.php");
 } else {
     $_SESSION['seccion_menu'] = 'acercaDe';
@@ -18,7 +17,7 @@ if ( empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno" ) {
 </head>
 
 <body>
-  
+
     <?php include "layouts/header-layout.php"; ?>
     <div class="container-fluid">
         <div class="row">
@@ -27,24 +26,37 @@ if ( empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno" ) {
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h4 class="h5">Acerca de este sistema</h4>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Share
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Export
-                            </button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
-                    </div>
+                    <h4 class="h5">Acerca del sistema de tutoría</h4>
+                    <?php include "layouts/user-layout.php"; ?>
                 </div>
 
-            
+                <section class="text-center container">
+                    <div class="row py-lg-3">
+                        <div class="col-lg-8 col-md-8 mx-auto">
+                            <h4 class="fw-bold text-muted">S.T. V.1.0 2022</h4>
+                            <p style="font-size: 18px;" class="lead text-muted">
+                                Este sistema tiene como objetivo
+                                administrar la información de las actividades 
+                                que se llevan a cabo en cada semestre por los alumnos de 
+                                cada una de las licenciaturas de la 
+                                Facultad de Ingeniería - UAEMéx. 
+                                <br>
+                            <h6 class="pt-0 text-secondary">Semestre 2022B</h6>
+
+                            </p>
+
+                            <div class="text-center p-3">
+                                <img src="Assets/Images/ta.jpg" style="width: 32%;" class="img-fluid" alt="...">
+                            </div>
+                            <p>
+                                <a href="Views/Alumno/index.php" class="btn btn-secondary my-3">Regresar al inicio</a>
+                                <a href="Config/Salir.php" class="btn btn-success my-3">Cerrar sesión</a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
             </main>
         </div>
     </div>

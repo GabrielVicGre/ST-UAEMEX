@@ -12,6 +12,7 @@ require_once "../../Controllers/Alumno/alumnoController.php";
 $id_usuario =  $_SESSION['id_usuario'];
 $alumnoController = new alumnoController();
 $datosUsuario = $alumnoController->getDatosUsuarioAlumno($id_usuario);
+$datosTutorDeAlumno = $alumnoController->getDatosTutorDeAlumno($id_usuario);
 
 ?>
 
@@ -33,52 +34,108 @@ $datosUsuario = $alumnoController->getDatosUsuarioAlumno($id_usuario);
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h4 class="h5">Perfil</h4>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Share
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Export
-                            </button>
+                    <?php include "layouts/user-layout.php"; ?>
+                </div>
+
+
+                <div class="container" style="background-image: url('../../Assets/Images/tapiz.png'); background-size: 100%;">
+                    <div class="p-3">
+                        <div class="container-fluid col-sm-12 col-lg-8 pb-2">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-center text-secondary"> Datos de usuario </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="contaner">
+                                        <div class="row">
+                                            <div class="mb-3 row d-none">
+                                                <div class="container text-center">
+                                                    <img src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" style="width: 70px" class="img-fluid" alt="...">
+                                                </div>
+                                            </div>
+                                            <?php
+                                            foreach ($datosUsuario as $datos) {
+                                            ?>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Correo: </label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="<?php echo $datos['email']; ?>" aria-label="Disabled input example" disabled readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Nombre: </label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="<?php echo $datos['nombre']; ?>" aria-label="Disabled input example" disabled readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">No. Cuenta: </label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="<?php echo $datos['no_cuenta']; ?>" aria-label="Disabled input example" disabled readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Licenciatura: </label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" readonly class="form-control-plaintext" value="<?php echo $datos['licenciatura']; ?>">
+                                                    </div>
+                                                </div>
+                                            <?php
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
+                        
+
+                        <div class="container col-sm-12 col-lg-8" >
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-center text-secondary"> Datos del Tutor </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="contaner">
+                                        <div class="row">
+                                            <div class="mb-3 row d-none">
+                                                <div class="container text-center">
+                                                    <img src="https://cdn-icons-png.flaticon.com/512/1134/1134762.png" style="width: 70px" class="img-fluid" alt="...">
+                                                </div>
+                                            </div>
+                                            <?php
+                                            foreach ($datosTutorDeAlumno as $datos) {
+                                            ?>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Correo: </label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="correotutor@tutor.uaemex.mx" aria-label="Disabled input example" disabled readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Nombre: </label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="<?php echo $datos['tutor']; ?>" aria-label="Disabled input example" disabled readonly>
+                                                    </div>
+                                                </div>
+
+
+                                            <?php
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                      
+
                     </div>
                 </div>
 
-                <div class="card p-5">
-                    <h5 class="text-center">Bienvenido al sistema para Alumnos </h5>
-                    <table class="mt-3 table table-bordered text-center table-responsive tabla_alumno_index">
-                        <thead class="bg-light">
-                            <th> Usuario</th>
-                            <th> Correo </th>
-                            <th> Nombre </th>
-                            <th> No. Cuenta </th>
-                            <th> Licenciatura </th>
-                        </thead>
-                        <tbody>
-                            <?php
-                            foreach ($datosUsuario as $datos) {
-                            ?>
-                                <tr>
-                                    <td><?php echo $datos['tipo']; ?></td>
-                                    <td>
-                                        <p><?php echo $datos['email']; ?></p>
-                                    </td>
-                                    <td><?php echo $datos['nombre']; ?></td>
-                                    <td><?php echo $datos['no_cuenta']; ?></td>
-                                    <td><?php echo $datos['licenciatura']; ?></td>
-
-                                </tr>
-                            <?php
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
             </main>
         </div>
     </div>

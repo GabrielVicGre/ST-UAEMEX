@@ -40,20 +40,8 @@ if (isset($_POST['selectIdAct'])) {
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h4 class="h5">Plan de Trabajo</h4>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Share
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Export
-                            </button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
-                    </div>
+                    <?php include "layouts/user-layout.php"; ?>
+
                 </div>
 
                 <a href="Views/Administrador/actividades.php" class="btn btn-secondary">Actividades Registradas </a>
@@ -92,7 +80,7 @@ if (isset($_POST['selectIdAct'])) {
                                     <div class="col-10">
                                         <h6>Plan de trabajo</h6>
                                         <table class="table table-bordered text-center table-responsive">
-                                            <tr class="text-white" style="background-color: #7aa79c;">
+                                            <tr class="text-white" style="background-color: #00BFA0;">
                                                 <td> Clave </td>
                                                 <td> Descripción</td>
                                             </tr>
@@ -124,11 +112,15 @@ if (isset($_POST['selectIdAct'])) {
                     </div>
                 </div>
 
+
             </main>
 
         </div>
     </div>
 
+
 </body>
+
+
 
 </html>

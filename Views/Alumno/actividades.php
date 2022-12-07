@@ -35,27 +35,15 @@ $id_alumno = $controller_alumno->getAlumnoData()->id_alumno;
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h4 class="h5">Actividades</h4>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Share
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Export
-                            </button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
-                    </div>
+                    <?php include "layouts/user-layout.php"; ?>
+
                 </div>
 
                 <br>
                 <div class="p-4 m-4">
-                        <?php include "layouts/resumen_actividades.php"; ?> <br>
-
-                        <table class="table table-bordered text-center table-responsive">
+                    <?php include "layouts/resumen_actividades.php"; ?> <br>
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center">
                             <thead style="background-color:#73C6B6;" class="text-white">
                                 <th class="short">Clave</th>
                                 <th class="long">Descripción</th>
@@ -78,10 +66,10 @@ $id_alumno = $controller_alumno->getAlumnoData()->id_alumno;
                                             <td class="act-data short">
                                                 <?php
                                                 if ($status == false) { ?>
-                                                    <button class="turn-in" type="submit">Entregar</button>
+                                                    <button class="btn btn-sm text-white turn-in" type="submit">Entregar</button>
                                                 <?php
                                                 } else { ?>
-                                                    <button class="turned-in" type="submit" disabled>Entregado</button>
+                                                    <button class="btn btn-sm turned-in" type="submit" disabled>Entregado</button>
                                                 <?php
                                                 } ?>
                                                 <input type="hidden" name="id_actividad" value="<?php echo $actividad->id_actividad; ?>">
@@ -93,7 +81,8 @@ $id_alumno = $controller_alumno->getAlumnoData()->id_alumno;
                                 ?>
                             </tbody>
                         </table>
-                    
+                    </div>
+
                 </div>
 
 

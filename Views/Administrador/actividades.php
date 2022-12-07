@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador" ) {
+if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador") {
     header("Location: ../../index.php");
-}else{
+} else {
     $_SESSION['seccion_menu'] = 'plan_trabajo';
 }
 
@@ -26,6 +26,29 @@ if (isset($_GET['delete'])) {
 
 <head>
     <?php include 'layouts/head-layout.php'; ?>
+    <style>
+        .btn-editar,.btn-guardar {
+            background-color: #BEA52A;
+            border-radius: 10px;
+            color: white;
+            border: none;
+        }
+        .btn-editar:hover, .btn-guardar:hover {
+            background-color: #AA934C;
+            color: white;          
+        }
+        .btn-borrar {
+            background-color: #839192;
+            border-radius: 10px;
+            color: white;
+            border: none;
+        }
+        .btn-borrar:hover {
+            background-color: #99A3A4;
+            color: white;          
+        }
+
+    </style>
 </head>
 
 <body>
@@ -39,20 +62,8 @@ if (isset($_GET['delete'])) {
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h4 class="h5">Actividades</h4>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Share
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Export
-                            </button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
-                    </div>
+                    <?php include "layouts/user-layout.php"; ?>
+
                 </div>
 
                 <div class="container">
@@ -98,11 +109,11 @@ if (isset($_GET['delete'])) {
                                                 </td>
                                                 <td><?php echo date_format(date_create($act['fecha_alta']), "d-m-Y"); ?></td>
                                                 <td colspan="2">
-                                                    <button class="submit-btn" type="submit" name="action" value="edit">
+                                                    <button class="btn btn-editar btn-sm submit-btn" type="submit" name="action" value="edit">
                                                         Editar <i class="fa fa-pencil" aria-hidden="true"></i>
                                                     </button>
 
-                                                    <button class="submit-btn" type="submit" name="delete" value="delete">
+                                                    <button class="btn btn-borrar btn-sm submit-btn" type="submit" name="delete" value="delete">
                                                         Borrar<i class="fa fa-times" aria-hidden="true"></i>
                                                     </button>
                                                 </td>

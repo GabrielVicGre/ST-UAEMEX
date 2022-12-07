@@ -7,6 +7,6 @@
           <label for="desc_actividad">Descripción:</label><br>
           <textarea  name="desc_actividad" id="desc_actividad" cols="30" rows="10" required></textarea>
           <br><br>
-          <input type="submit" name="add" value="Guardar">
+          <input type="submit" class="btn btn-guardar" name="add" value="Guardar">
       </form>
   </div>

@@ -14,10 +14,10 @@ $act = $controller->getActividad($_GET['id_actividad']);
         <table class="buttons-panel">
             <tr>
                 <td>
-                    <input type="submit" name="update" value="Guardar">
+                    <input type="submit" class="btn btn-guardar" name="update" value="Guardar">
                 </td>
                 <td>
-                    <button class="submit-btn" type="submit" name="action" value="cancel">Cancelar</button>
+                    <button class="btn btn-borrar submit-btn" type="submit" name="action" value="cancel">Cancelar</button>
                 </td>
             </tr>
         </table>
