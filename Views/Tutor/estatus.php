@@ -5,11 +5,11 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
 } else {
     $_SESSION['seccion_menu'] = 'status';
 }
-
-require_once "../../Controllers/Tutor/estatusController.php";
-require_once "../../Controllers/Alumno/actividadesController.php";
-require_once "../../Controllers/Alumno/entregaController.php";
-require_once "Graphics/PercentBar.php";
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+require_once $ruta."/Controllers/Tutor/estatusController.php";
+require_once $ruta."/Controllers/Alumno/actividadesController.php";
+require_once $ruta."/Controllers/Alumno/entregaController.php";
+require_once $ruta."/Views/Graphics/PercentBar.php";
 
 $controller_estatus = new estatusController();
 $controller_actividades = new actividadesController();

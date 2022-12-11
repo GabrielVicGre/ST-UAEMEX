@@ -26,6 +26,7 @@
                 Estatus
             </a>
         </li>
+        
     </ul>
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 py-2 mt-4 mb-1 text-bg-success text-uppercase">
         <span>Información Adicional</span>
