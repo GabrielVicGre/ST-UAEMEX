@@ -10,12 +10,12 @@ $ruta =  $_SERVER['DOCUMENT_ROOT'];
 require_once $ruta."/Controllers/Tutor/estatusController.php";
 require_once $ruta."/Controllers/Alumno/actividadesController.php";
 require_once $ruta."/Controllers/Alumno/entregaController.php";
-require_once $ruta."/Views/Graphics/PercentBar.php";
-
+/*require_once $ruta."/Views/Graphics/PercentBar.php";*/
+/*
 $controller_estatus = new estatusController();
 $controller_actividades = new actividadesController();
 $controller_entrega = new entregaController();
-
+*/
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ $controller_entrega = new entregaController();
                     <h4 class="h5">Estatus</h4>
                     <?php include "layouts/user-layout.php"; ?>
                 </div>
-                
+                <!--
                 <div class="p-5" id="accordion">
                     <?php
                     $alumnos = $controller_estatus->getAlumnos();
@@ -101,7 +101,7 @@ $controller_entrega = new entregaController();
                     }
                         ?>
                 </div>
-                
+                -->
             </main>
         </div>
     </div>
