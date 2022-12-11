@@ -2,6 +2,20 @@
 
 include('../Config/connectPOO.php');
 
+/* CAPTCHA */
+$ip= $_SERVER['REMOTE_ADDR'];
+$captcha = $_POST['g-recaptcha-response'];
+$secretkey = "6LdYZHAjAAAAAENeEpFGfuj2Xpao9KV50ymJMSv9"; 
+$respuesta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$captcha&remoteip=$ip");
+$atributos = json_decode($respuesta,TRUE);
+$errors = array();
+if( $atributos['success'] == true ){  
+    header("Location: ../Views/Administrador/index.php");
+}else{
+    $errors[]='Verificar el captcha';
+    header("Location: ../index.php");  
+}
+/*
 $user = $_POST['user'];
 $password = $_POST['password'];
 
@@ -11,7 +25,7 @@ $sql = "SELECT * FROM usuario u INNER JOIN tipo_usuario tu ON
 
 $data = $connection->query($sql);  // ejecuta query
 
-if($data->num_rows == 1){  // Si encuentra algun registro entonces
+if($data->num_rows == 1 && count($errors) == 0){  // Si encuentra algun registro entonces
     
     $usuario = mysqli_fetch_array($data);
     if(isset($_POST["Ingresar"])){
@@ -38,6 +52,6 @@ if($data->num_rows == 1){  // Si encuentra algun registro entonces
 }else{  // No encuentra el registro
     header("Location: ../index.php?e");     
 }
-
+*/
 
 ?>
