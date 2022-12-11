@@ -7,24 +7,10 @@ input[type="text"], input[type="password"] {
     background-color: #D3D3D3;
     border: 1px solid rgb(201, 194, 194);
     outline: none;
-
     border-radius: 12px;
     width: 100%;
     font-size: 14px;
 }
-
-/*
-input[type="submit"], button.submit-btn {
-    padding: 5px 40px;
-    background-color: #BEA52A;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    display: block;
-    margin: auto;
-    height: 30px;
-}*/
 
 .btnIngresar{
     background-color: #BEA52A; 

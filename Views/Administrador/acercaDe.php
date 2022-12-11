@@ -44,7 +44,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador" 
                             </p>
 
                             <div class="text-center p-3">
-                                <img src="Assets/Images/ta.jpg" style="width: 32%;" class="img-fluid" alt="...">
+                                <img src="Assets/Images/imgabout.jpg" style="width: 32%;" class="img-fluid" alt="...">
                             </div>
                             <p>
                                 <a href="Views/Administrador/index.php" class="btn btn-secondary my-3">Regresar al inicio</a>
