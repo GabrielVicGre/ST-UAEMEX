@@ -8,7 +8,6 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
 
 $ruta =  $_SERVER['DOCUMENT_ROOT'];
 require_once $ruta."/Controllers/Tutor/estatusController.php";
-/*
 require_once $ruta."/Controllers/Alumno/actividadesController.php";
 require_once $ruta."/Controllers/Alumno/entregaController.php";
 require_once $ruta."/Views/Graphics/PercentBar.php";
@@ -16,7 +15,7 @@ require_once $ruta."/Views/Graphics/PercentBar.php";
 $controller_estatus = new estatusController();
 $controller_actividades = new actividadesController();
 $controller_entrega = new entregaController();
-*/
+
 ?>
 
 <!DOCTYPE html>

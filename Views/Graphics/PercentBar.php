@@ -3,7 +3,8 @@
 /*$root = $_SERVER['DOCUMENT_ROOT'];
 require_once($root . "/SistemaTutoriaFIUAEMex/Views/Graphics/Displayable.php");*/
 
-require_once "Displayable.php";
+$root = $_SERVER['DOCUMENT_ROOT'];
+require_once $root."/Views/Graphics/Displayable.php";
 
 
 /**
