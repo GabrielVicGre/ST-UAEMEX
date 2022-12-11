@@ -1,9 +1,9 @@
 <?php
 session_start();
-
-require "../../Models/UsuarioCRUD.php";
-require "../../Models/AlumnoCRUD.php";
-require "../../Models/LicenciaturaCRUD.php";
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."/Models/UsuarioCRUD.php");
+include_once ($ruta."/Models/AlumnoCRUD.php");
+include_once ($ruta."/Models/LicenciaturaCRUD.php");
 
 $csv = fopen($_FILES['csv_file']['tmp_name'], "r");
 

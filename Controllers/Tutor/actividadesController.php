@@ -1,44 +1,36 @@
 <?php
-require "../../Models/ActividadCRUD.php";
-require_once "../../Models/AlumnoCRUD.php";
-require "../../Models/EntregaCRUD.php";
-require "../../Models/PlanTrabajoCRUD.php";
-require "../../Models/TutorAlumno.php";
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."/Models/ActividadCRUD.php");
+include_once ($ruta."/Models/AlumnoCRUD.php");
+include_once ($rate."/Models/EntregaCRUD.php");
+include_once ($ruta."/Models/PlanTrabajoCRUD.php");
+include_once ($rate."/Models/TutorAlumno.php");
 
-class actividadesController{
+class actividadesController {
     private $model_actividad;
     private $model_alumno;
     private $model_entrega;
     private $model_plan_trabajo;
     private $model_tutor_alumno;
 
-
     function __construct() {
         $this->model_actividad = new ActividadCRUD();
-
         $this->model_alumno = new AlumnoCRUD();
-
         $this->model_entrega = new EntregaCRUD();
-
         $this->model_plan_trabajo = new PlanTrabajoCRUD();
         $this->model_tutor_alumno = new TutorAlumno();
-
     }
 
     function getLicenciaturaAlumnos($id_usuario){
         return $this->model_tutor_alumno->getLicAlumnos($id_usuario);
     }
 
-    function getActividadesPorPlan($plan){
+    /*function getActividadesPorPlan($plan){
         return $this->model_tutor_alumno->getActividades_Por_Plan($plan);     
-    }
-
-
-
+    }*/
 
     function getActividadesByAlumno($id_alumno) {
         $alumno = $this->model_alumno->getAlumnoById($id_alumno);
-
         return $this->model_plan_trabajo->getActividadesPorLicenciatura($alumno->id_licenciatura);
     }
 
@@ -60,15 +52,12 @@ class actividadesController{
 
     function getEntregaRate($id_alumno) {
         $total_actividades = count($this->getActividadesByAlumno($id_alumno));
-
         $total_entregas = count($this->getEntregasByAlumno($id_alumno));
-
         if($total_actividades != 0) {
             $rate = $total_entregas * 100 / $total_actividades;
         } else {
             $rate = 0;
         }
-
         return round($rate, 1);
     }
 }

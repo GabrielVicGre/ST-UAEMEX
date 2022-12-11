@@ -14,9 +14,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <style>
-        
-    </style>
 </head>
 
 <body>

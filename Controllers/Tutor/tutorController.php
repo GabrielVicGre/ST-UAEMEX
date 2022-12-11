@@ -1,6 +1,7 @@
 <?php
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-require_once "../../Models/UsuarioIniciar.php";
+include_once ($root."/Models/UsuarioIniciar.php");
 
 class tutorController {
     private $model;

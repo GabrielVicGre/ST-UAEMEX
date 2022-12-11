@@ -1,8 +1,9 @@
 <?php
-require_once "../../Models/ActividadCRUD.php";
-require_once "../../Models/AlumnoCRUD.php";
-require_once "../../Models/EntregaCRUD.php";
-require_once "../../Models/PlanTrabajoCRUD.php";
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."/Models/ActividadCRUD.php");
+include_once ($ruta."/Models/AlumnoCRUD.php");
+include_once ($ruta."/Models/EntregaCRUD.php");
+include_once ($ruta."/Models/PlanTrabajoCRUD.php");
 
 class actividadesController{
     private $model_actividad;
@@ -10,14 +11,10 @@ class actividadesController{
     private $model_entrega;
     private $model_plan_trabajo;
 
-
     function __construct() {
         $this->model_actividad = new ActividadCRUD();
-
         $this->model_alumno = new AlumnoCRUD();
-
         $this->model_entrega = new EntregaCRUD();
-
         $this->model_plan_trabajo = new PlanTrabajoCRUD();
     }
 
@@ -27,7 +24,6 @@ class actividadesController{
 
     function getActividadesByAlumno($id_alumno) {
         $alumno = $this->model_alumno->getAlumnoById($id_alumno);
-
         return $this->model_plan_trabajo->getActividadesPorLicenciatura($alumno->id_licenciatura);
     }
 

@@ -1,8 +1,9 @@
 <?php
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-require_once "../../Models/AlumnoCRUD.php";
-require_once "../../Models/EntregaCRUD.php";
-require_once "../../Models/TutorCRUD.php";
+include_once ($ruta."/Models/AlumnoCRUD.php");
+include_once ($ruta."/Models/EntregaCRUD.php");
+include_once ($ruta."/Models/TutorCRUD.php");
 
 class estatusController {
     private $model_alumno;

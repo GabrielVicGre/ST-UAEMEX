@@ -1,7 +1,8 @@
 <?php
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."/Models/AlumnoCRUD.php");
+include_once ($ruta."/Models/TutorCRUD.php");
 
-require "../../Models/AlumnoCRUD.php";
-require "../../Models/TutorCRUD.php";
 
 class consultarController {
     private $model_alumno;

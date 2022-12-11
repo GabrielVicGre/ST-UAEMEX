@@ -1,7 +1,8 @@
 <?php
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-require_once "../../Models/AlumnoCRUD.php";
-require_once "../../Models/UsuarioIniciar.php";
+include_once ($ruta."/Models/AlumnoCRUD.php");
+include_once ($ruta."/Models/UsuarioIniciar.php");
 
 class alumnoController {
     private $model;
@@ -10,7 +11,6 @@ class alumnoController {
     function __construct() {
         $this->model = new AlumnoCRUD();
         $this->model_Usuario = new UsuarioIniciar();
-
     }
 
     function getAlumnoData() {
