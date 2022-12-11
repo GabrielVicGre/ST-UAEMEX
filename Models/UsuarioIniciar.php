@@ -1,14 +1,12 @@
 <?php
-require '../../Config/connectPOO.php';
+$ruta = $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."Config/connectPOO.php");
 
 class UsuarioIniciar {
     protected $id_tutor;
     protected $id_alumno;
 
-
     public function getDatosDeUsuarioTutor($id_usuario){
-        
-       
         global $connection;  
 
         $datosdelUsuario = array(); 

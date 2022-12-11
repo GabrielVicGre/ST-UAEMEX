@@ -1,7 +1,8 @@
 <?php
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-require '../../Config/connectPOO.php';
-require "../../Models/Tutor.php";
+include_once ($ruta."/Config/connectPOO.php");
+include_once ($ruta."/Models/Tutor.php");
 
 class TutorCRUD {
 

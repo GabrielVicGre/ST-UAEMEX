@@ -1,7 +1,7 @@
 <?php
-
-require '../../Config/connectPOO.php';
-require "../../Models/Licenciatura.php";
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."/Config/connectPOO.php");
+include_once ($ruta."/Models/Licenciatura.php");
 
 class LicenciaturaCRUD{
     //CREATE

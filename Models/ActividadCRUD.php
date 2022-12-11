@@ -1,6 +1,7 @@
 <?php
-require '../../Config/connectPOO.php';
-require "../../Models/Actividad.php";
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."/Config/connectPOO.php");
+include_once ($ruta."/Models/Actividad.php");
 
 class ActividadCRUD {
 

@@ -1,8 +1,8 @@
 <?php
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."/Models/UsuarioCRUD.php");
 
-require "../Models/UsuarioCRUD.php";
-
-class  UsuarioController{
+class  UsuarioController {
     private $model_usuario;
 
     function __construct() {

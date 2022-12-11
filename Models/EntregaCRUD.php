@@ -1,6 +1,7 @@
 <?php
-require_once '../../Config/connectPOO.php';
-require_once "../../Models/Entrega.php";
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."/Config/connectPOO.php");
+include_once ($ruta."/Models/Entrega.php");
 
 class EntregaCRUD {
     // CREATE
