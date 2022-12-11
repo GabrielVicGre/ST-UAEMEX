@@ -21,7 +21,7 @@
         </li>
 
         <li class="nav-item mx-1">
-            <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'status' ? 'selected'  : '' ?>" href="Views/Tutor/estatus.php">
+            <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'estatus' ? 'selected'  : '' ?>" href="Views/Tutor/estatus.php">
                 <i class="bi bi-bar-chart-line-fill mx-2"></i>
                 Estatus
             </a>

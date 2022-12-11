@@ -3,8 +3,9 @@ session_start();
 if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
     header("Location: ../../index.php");
 } else {
-    $_SESSION['seccion_menu'] = 'status';
+    $_SESSION['seccion_menu'] = 'estatus';
 }
+/*
 $ruta =  $_SERVER['DOCUMENT_ROOT'];
 require_once $ruta."/Controllers/Tutor/estatusController.php";
 require_once $ruta."/Controllers/Alumno/actividadesController.php";
@@ -14,7 +15,7 @@ require_once $ruta."/Views/Graphics/PercentBar.php";
 $controller_estatus = new estatusController();
 $controller_actividades = new actividadesController();
 $controller_entrega = new entregaController();
-
+*/
 ?>
 
 <!DOCTYPE html>
@@ -33,14 +34,13 @@ $controller_entrega = new entregaController();
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h4 class="h5">Status</h4>
+                    <h4 class="h5">Estatus</h4>
                     <?php include "layouts/user-layout.php"; ?>
-
                 </div>
+                <!--
                 <div class="p-5" id="accordion">
                     <?php
                     $alumnos = $controller_estatus->getAlumnos();
-
                     $count = 0;
                     foreach ($alumnos as $alumno) {
                     ?>
@@ -100,7 +100,8 @@ $controller_entrega = new entregaController();
                         $count++;
                     }
                         ?>
-                        </div>
+                </div>
+                -->
             </main>
         </div>
     </div>
