@@ -5,9 +5,9 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
 } else {
     $_SESSION['seccion_menu'] = 'perfil';
 }
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-require_once "../../Controllers/Tutor/tutorController.php";
-
+include_once ($ruta."/Controllers/Tutor/tutorController.php");
 $id_usuario =  $_SESSION['id_usuario'];
 $tutorController = new tutorController();
 $datosUsuario = $tutorController->getDatosUsuarioTutor($id_usuario);

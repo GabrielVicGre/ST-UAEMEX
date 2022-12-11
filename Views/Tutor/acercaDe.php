@@ -50,7 +50,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
                                 <img src="Assets/Images/imgabout.jpg" style="width: 32%;" class="img-fluid" alt="...">
                             </div>
                             <p>
-                                <a href="Views/Administrador/index.php" class="btn btn-secondary my-3">Regresar al inicio</a>
+                                <a href="Views/Tutor/index.php" class="btn btn-secondary my-3">Regresar al inicio</a>
                                 <a href="Config/Salir.php" class="btn btn-success my-3">Cerrar sesión</a>
                             </p>
                         </div>

@@ -28,15 +28,15 @@
     </h6>
     <ul class="nav flex-column mb-2 mx-1">
         <li class="nav-item">
-            <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'acercaDe' ? 'selected'  : '' ?>" href="Views/Alumno/acercaDe.php">
-                <i class="bi bi-info-circle mx-2"></i>
-                Acerca de
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'ayuda' ? 'selected'  : '' ?>" href="Views/Alumno/ayuda.php">
                 <i class="bi bi-question-octagon mx-2"></i>
                 Ayuda
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'acercaDe' ? 'selected'  : '' ?>" href="Views/Alumno/acercaDe.php">
+                <i class="bi bi-info-circle mx-2"></i>
+                Acerca de
             </a>
         </li>
     </ul>

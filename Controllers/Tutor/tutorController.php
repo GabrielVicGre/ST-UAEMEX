@@ -1,7 +1,7 @@
 <?php
 $ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-include_once ($root."/Models/UsuarioIniciar.php");
+include_once ($ruta."/Models/UsuarioIniciar.php");
 
 class tutorController {
     private $model;
