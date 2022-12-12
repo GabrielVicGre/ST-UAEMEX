@@ -14,11 +14,6 @@ enum grade {
     case HIGH;
 }
 
-/**
- * Barra de porcentaje con formato condicional.
- * 
- * @author Santi <ssotov001@alumno.uaemex.mx>
- */
 Class PercentBar implements Displayable{
     /**
      * Valor del relleno de la barra de porcentaje.
