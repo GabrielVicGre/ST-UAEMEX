@@ -9,12 +9,12 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno") {
 $ruta =  $_SERVER['DOCUMENT_ROOT'];
 include_once ($ruta."/Controllers/Alumno/alumnoController.php");
 include_once ($ruta."/Controllers/Alumno/actividadesController.php");
-include_once ($ruta."/Views/Graphics/PercentBar.php");
+/*include_once ($ruta."/Views/Graphics/PercentBar.php");
 
 
 $controller_actividades = new actividadesController();
 $controller_alumno = new alumnoController();
-$id_alumno = $controller_alumno->getAlumnoData()->id_alumno;
+$id_alumno = $controller_alumno->getAlumnoData()->id_alumno;*/
 
 ?>
 
@@ -44,6 +44,7 @@ $id_alumno = $controller_alumno->getAlumnoData()->id_alumno;
                 <div class="p-4 m-4">
                     <?php include "layouts/resumen_actividades.php"; ?> <br>
                     <div class="table-responsive">
+                        <!--   
                         <table class="table table-bordered text-center">
                             <thead style="background-color:#73C6B6;" class="text-white">
                                 <th class="short">Clave</th>
@@ -82,6 +83,7 @@ $id_alumno = $controller_alumno->getAlumnoData()->id_alumno;
                                 ?>
                             </tbody>
                         </table>
+                        -->
                     </div>
 
                 </div>
