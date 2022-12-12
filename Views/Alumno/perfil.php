@@ -6,8 +6,8 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno") {
 } else {
     $_SESSION['seccion_menu'] = 'perfil';
 }
-
-require_once "../../Controllers/Alumno/alumnoController.php";
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."/Controllers/Alumno/alumnoController.php");
 
 $id_usuario =  $_SESSION['id_usuario'];
 $alumnoController = new alumnoController();

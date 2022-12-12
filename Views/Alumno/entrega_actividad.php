@@ -7,9 +7,10 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno") {
     $_SESSION['seccion_menu'] = 'actividades';
 }
 
-require "../../Controllers/Alumno/alumnoController.php";
-require "../../Controllers/Alumno/actividadesController.php";
-require "../../Controllers/Alumno/entregaController.php";
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once ($ruta."/Controllers/Alumno/alumnoController.php");
+include_once ($ruta."/Controllers/Alumno/actividadesController.php");
+include_once ($ruta."/Controllers/Alumno/entregaController.php");
 
 $controller_actividades = new actividadesController();
 $controller_alumno = new alumnoController();
