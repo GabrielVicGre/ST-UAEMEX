@@ -9,9 +9,9 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno") {
 $ruta =  $_SERVER['DOCUMENT_ROOT'];
 include_once ($ruta."/Controllers/Alumno/alumnoController.php");
 include_once ($ruta."/Controllers/Alumno/actividadesController.php");
-/*include_once ($ruta."/Views/Graphics/PercentBar.php");
+include_once ($ruta."/Views/Graphics/PercentBar.php");
 
-
+/*
 $controller_actividades = new actividadesController();
 $controller_alumno = new alumnoController();
 $id_alumno = $controller_alumno->getAlumnoData()->id_alumno;*/
