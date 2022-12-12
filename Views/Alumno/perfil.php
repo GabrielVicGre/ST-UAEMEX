@@ -38,7 +38,7 @@ $datosTutorDeAlumno = $alumnoController->getDatosTutorDeAlumno($id_usuario);
                 </div>
 
 
-                <div class="container" style="background-image: url('../../Assets/Images/tapiz.png'); background-size: 100%;">
+                <div class="container py-3" style="background-image: url('../../Assets/Images/tapiz.png'); background-size: 100%;">
                     <div class="p-3">
                         <div class="container-fluid col-sm-12 col-lg-8 pb-2">
                             <div class="card">
@@ -135,6 +135,7 @@ $datosTutorDeAlumno = $alumnoController->getDatosTutorDeAlumno($id_usuario);
 
                     </div>
                 </div>
+                <?php include "layouts/footer-layout.php"; ?>
 
             </main>
         </div>

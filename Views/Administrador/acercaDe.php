@@ -54,6 +54,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador" 
                     </div>
                 </section>
 
+                <?php include "layouts/footer-layout.php"; ?>
 
 
             </main>

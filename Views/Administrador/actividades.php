@@ -124,11 +124,13 @@ if (isset($_GET['delete'])) {
                                     }
                                     ?>
                                 </table>
-                                <a class="btn btn-sm btn-success mt-1" href="Views/Administrador/plan_trabajo.php?id_licenciatura=1">Regresar <i class="bi bi-arrow-left-circle mx-1"></i></a>
+                                <a class="btn btn-sm btn-success mt-1" href="Views/Administrador/plan_trabajo.php?id_licenciatura=1"><i class="bi bi-arrow-left-circle mx-1"> Regresar </i></a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div><br>
+                <?php include "layouts/footer-layout.php"; ?>
+
 
             </main>
 

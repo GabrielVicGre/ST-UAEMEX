@@ -91,6 +91,7 @@ $datosUsuario = $tutorController->getDatosUsuarioTutor($id_usuario);
                     </div>
                 </div>
 
+                <?php include "layouts/footer-layout.php"; ?>
 
             </main>
         </div>

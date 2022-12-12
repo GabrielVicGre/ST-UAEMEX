@@ -56,7 +56,8 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
                         </div>
                     </div>
                 </section>
-
+                <br>
+                <?php include "layouts/footer-layout.php"; ?>
 
             </main>
         </div>

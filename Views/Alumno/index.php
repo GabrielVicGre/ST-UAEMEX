@@ -1,8 +1,7 @@
-
 <?php
 
 session_start();
-if ( empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno" ) {
+if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno") {
     header("Location: ../../index.php");
 } else {
     $_SESSION['seccion_menu'] = 'index';
@@ -18,7 +17,7 @@ if ( empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno" ) {
 </head>
 
 <body>
-  
+
     <?php include "layouts/header-layout.php"; ?>
     <div class="container-fluid">
         <div class="row">
@@ -34,14 +33,17 @@ if ( empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno" ) {
                 <div class="card mb-3">
                     <img src="https://pbs.twimg.com/media/ECF9uFPXkAACfrz.jpg" class="card-img-top img-fluid" style="height: 380px;" alt="...">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Coordinación de Tutoría</h5>
+                        <h4 class="card-title">Coordinación de Tutoría</h4>
                         <p class="card-text">Lic. José Alberto Carreón Rodríguez</p>
-                        <p class="card-text"><small class="text-muted">Semestre 2022B</small></p>
                     </div>
                 </div>
+                <?php include "layouts/footer-layout.php"; ?>
             </main>
+
         </div>
+
     </div>
+
 
 </body>
 

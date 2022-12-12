@@ -47,7 +47,9 @@ $controller_estatus = new estatusController();
                         $controller_estatus->tablaEstatus($_GET['id_licenciatura']);
                         ?>
                     </div>
-                </div>
+                </div><br>
+                <?php include "layouts/footer-layout.php"; ?>
+
             </main>
         </div>
     </div>

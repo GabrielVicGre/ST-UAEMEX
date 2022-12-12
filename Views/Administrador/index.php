@@ -35,9 +35,11 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador" 
                     <div class="card-body text-center">
                         <h5 class="card-title">Coordinación de Tutoría</h5>
                         <p class="card-text">Lic. José Alberto Carreón Rodríguez</p>
-                        <p class="card-text"><small class="text-muted">Semestre 2022B</small></p>
                     </div>
                 </div>
+
+                <?php include "layouts/footer-layout.php"; ?>
+
             </main>
         </div>
     </div>

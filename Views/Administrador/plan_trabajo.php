@@ -46,7 +46,6 @@ if (isset($_POST['selectIdAct'])) {
 
                 <a href="Views/Administrador/actividades.php" class="btn btn-secondary">Actividades Registradas </a>
 
-
                 <div class="mt-3 card text-center">
                     <div class="card-header">
                         <div class="card-title">
@@ -111,7 +110,7 @@ if (isset($_POST['selectIdAct'])) {
                         Semestre 2022B
                     </div>
                 </div>
-
+                <?php include "layouts/footer-layout.php"; ?>
 
             </main>
 
