@@ -4,7 +4,7 @@
 require_once($root . "/SistemaTutoriaFIUAEMex/Views/Graphics/Displayable.php");*/
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-require_once $root."/Views/Graphics/Displayable.php";
+include_once ($root."/Views/Graphics/Displayable.php");
 
 
 /**
