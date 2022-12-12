@@ -44,7 +44,7 @@ $id_alumno = $controller_alumno->getAlumnoData()->id_alumno;
                 <div class="p-4 m-4">
                     <?php include "layouts/resumen_actividades.php"; ?> <br>
                     <div class="table-responsive">
-                        <!--   
+                         
                         <table class="table table-bordered text-center">
                             <thead style="background-color:#73C6B6;" class="text-white">
                                 <th class="short">Clave</th>
@@ -83,7 +83,7 @@ $id_alumno = $controller_alumno->getAlumnoData()->id_alumno;
                                 ?>
                             </tbody>
                         </table>
-                        -->
+                        
                     </div>
 
                 </div>
