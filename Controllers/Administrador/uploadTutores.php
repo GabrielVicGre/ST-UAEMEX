@@ -4,8 +4,6 @@ session_start();
 include_once ("../../Models/UsuarioCRUD.php");
 include_once ("../../Models/TutorCRUD.php");
 include_once ("../../Models/LicenciaturaCRUD.php");
-include_once ("../../Models/Usuario.php");
-include_once ("../../Models/Tutor.php");
 
 $csv = fopen($_FILES['csv_file']['tmp_name'], "r");
 

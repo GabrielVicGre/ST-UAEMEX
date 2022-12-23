@@ -70,7 +70,7 @@ class TutorCRUD {
 
         $tutores = array();
 
-        $query = "SELECT * FROM tutor WHERE nombre LIKE '%$match%' OR rfc LIKE '%$match%'";
+        $query = "SELECT * FROM tutor WHERE nombre LIKE '%$match%' OR cve_tutor LIKE '%$match%' OR id_licenciatura = (SELECT id_licenciatura FROM licenciatura WHERE siglas LIKE '%$match%')";
         $result = $connection->query($query);
         while($tutor = $result->fetch_array(MYSQLI_ASSOC)) {
             $tu = new Tutor();

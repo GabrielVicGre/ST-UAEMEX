@@ -44,7 +44,7 @@ if (!isset($_GET['tab'])) {
                                     <a href="#tutores" style="border-radius: 5px 5px 0px 0px !important; color: gray;" class="nav-link <?php echo $_GET['tab'] == "tutores" ? "active" : "" ?>" data-bs-toggle="tab">Tutores</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#alumno_tutor" style="border-radius: 5px 5px 0px 0px !important; color: gray;" class="nav-link <?php echo $_GET['tab'] == "alumno-tutor" ? "active" : "" ?>" data-bs-toggle="tab">Alumno - Tutor</a>
+                                    <a href="#alumno-tutor" style="border-radius: 5px 5px 0px 0px !important; color: gray;" class="nav-link <?php echo $_GET['tab'] == "alumno-tutor" ? "active" : "" ?>" data-bs-toggle="tab">Alumno - Tutor</a>
                                 </li>
                             </ul>
                         </div>
@@ -74,7 +74,7 @@ if (!isset($_GET['tab'])) {
                                         </form>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade <?php echo $_GET['tab'] == "alumno_tutor" ? "show active" : "" ?>" id="alumno_tutor">
+                                <div class="tab-pane fade <?php echo $_GET['tab'] == "alumno-tutor" ? "show active" : "" ?>" id="alumno-tutor">
                                     <h5 class="card-title">Alumno - Tutor</h5>
                                     <p class="card-text">Asegurate que el archivo que subas tenga la extención .csv</p>
                                     <div>
@@ -108,4 +108,3 @@ if (!isset($_GET['tab'])) {
 </script>
 
 </html>
-

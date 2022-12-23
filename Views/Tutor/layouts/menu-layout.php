@@ -19,11 +19,23 @@
                 Actividades
             </a>
         </li>
+        <li class="nav-item mx-1">
+            <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'carga_alumnos' ? 'selected'  : '' ?>" href="Views/Tutor/carga_alumnos.php">
+                <i class="bi bi-cloud-arrow-up-fill mx-2"></i>
+                Cargar alumnos
+            </a>
+        </li>
+        <li class="nav-item mx-1">
+            <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'estatus_alumnos' ? 'selected'  : '' ?>" href="Views/Tutor/estatus_alumnos.php">
+                <i class="bi bi-bar-chart-line-fill mx-2"></i>
+                Estatus alumnos
+            </a>
+        </li>
 
         <li class="nav-item mx-1">
-            <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'estatus' ? 'selected'  : '' ?>" href="Views/Tutor/estatus.php">
+            <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'estatus_tutorados' ? 'selected'  : '' ?>" href="Views/Tutor/estatus_tutorados.php">
                 <i class="bi bi-bar-chart-line-fill mx-2"></i>
-                Estatus
+                Estatus tutorados
             </a>
         </li>
         

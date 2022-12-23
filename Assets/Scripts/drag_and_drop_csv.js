@@ -18,6 +18,8 @@ class DragAndDrop {
         this.fileInput.addEventListener("change", this.handleSelect.bind(this));
 
         this.submitBtn.addEventListener("click", this.loading.bind(this));
+
+        console.log("Todo bien D&D - " + id);
     }
 
     highlight(e) {

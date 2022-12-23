@@ -1,18 +1,21 @@
 <?php
 
-include_once ("../../Config/connectPOO.php");
-include_once ("../../Models/Alumno.php");
+include_once("../../Config/connectPOO.php");
+include_once("../../Models/Alumno.php");
 
-class AlumnoCRUD {
+class AlumnoCRUD
+{
     // CREATE
-    function createAlumno($alumno) {
+    function createAlumno($alumno)
+    {
         global $connection;
         $query = "INSERT INTO alumno VALUES (NULL, '$alumno->nombre', '$alumno->no_cuenta', $alumno->id_usuario, $alumno->id_licenciatura, NULL)";
         $connection->query($query);
     }
 
     // REPORT
-    function getAlumnoById($id) {
+    function getAlumnoById($id)
+    {
         global $connection;
 
         $query = "SELECT * FROM alumno WHERE id_alumno = $id";
@@ -30,14 +33,20 @@ class AlumnoCRUD {
         return $alu;
     }
 
-    function getAlumnos() {
+    function getAlumnos()
+    {
         global $connection;
 
         $alumnos = array();
 
         $query = "SELECT * FROM alumno";
         $result = $connection->query($query);
-        while($alumno = $result->fetch_array(MYSQLI_ASSOC)) {
+
+        if($result->num_rows == 0) {
+            throw new Exception();
+        }
+
+        while ($alumno = $result->fetch_array(MYSQLI_ASSOC)) {
             $alu = new Alumno();
             $alu->id_alumno = $alumno['id_alumno'];
             $alu->nombre = $alumno['nombre'];
@@ -51,14 +60,20 @@ class AlumnoCRUD {
         return $alumnos;
     }
 
-    function getAlumnosMatch($match) {
+    function getAlumnosMatch($match)
+    {
         global $connection;
 
         $alumnos = array();
 
-        $query = "SELECT * FROM alumno WHERE nombre LIKE '%$match%' OR no_cuenta LIKE '%$match%'";
+        $query = "SELECT * FROM alumno WHERE nombre LIKE '%$match%' OR no_cuenta LIKE '%$match%' OR no_cuenta LIKE '%$match%' OR id_licenciatura = (SELECT id_licenciatura FROM licenciatura WHERE siglas LIKE '%$match%')";
         $result = $connection->query($query);
-        while($alumno = $result->fetch_array(MYSQLI_ASSOC)) {
+
+        if($result->num_rows == 0) {
+            throw new Exception();
+        }
+
+        while ($alumno = $result->fetch_array(MYSQLI_ASSOC)) {
             $alu = new Alumno();
             $alu->id_alumno = $alumno['id_alumno'];
             $alu->nombre = $alumno['nombre'];
@@ -72,11 +87,17 @@ class AlumnoCRUD {
         return $alumnos;
     }
 
-    function getAlumnoByUserId($id_usuario) {
+    function getAlumnoByUserId($id_usuario)
+    {
         global $connection;
 
         $query = "SELECT * FROM alumno WHERE id_usuario = $id_usuario";
         $result = $connection->query($query);
+
+        if($result->num_rows == 0) {
+            throw new Exception();
+        }
+
         $alumno = $result->fetch_array(MYSQLI_ASSOC);
 
         $alu = new Alumno();
@@ -90,42 +111,59 @@ class AlumnoCRUD {
         return $alu;
     }
 
-    function getAlumnosByTutor($id_tutor) {
+    function getAlumnosByTutor($id_tutor)
+    {
         global $connection;
-    
+
         $alumnos = array();
-    
+
         $query = "SELECT * FROM alumno WHERE id_tutor = $id_tutor";
         $result = $connection->query($query);
-        while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+
+        if($result->num_rows == 0) {
+            throw new Exception();
+        }
+
+        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             array_push($alumnos, $this->getAlumnoById($row['id_alumno']));
         }
-    
+
         return $alumnos;
     }
 
-    function getAlumnosByLicenciatura($id_licenciatura) {
+    function getAlumnosByLicenciatura($id_licenciatura)
+    {
         global $connection;
 
         $alumnos = array();
 
         $query = "SELECT * FROM alumno WHERE id_licenciatura = $id_licenciatura";
         $result = $connection->query($query);
-        while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+
+        if($result->num_rows == 0) {
+            throw new Exception();
+        }
+
+        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             array_push($alumnos, $this->getAlumnoById($row['id_alumno']));
         }
 
         return $alumnos;
     }
 
-    function getAlumnoByNoCuenta($no_cuenta) {
+    function getAlumnoByNoCuenta($no_cuenta)
+    {
         global $connection;
 
-        
+
         $query = "SELECT * FROM alumno WHERE no_cuenta = '$no_cuenta'";
-        echo $query;
 
         $result = $connection->query($query);
+
+        if($result->num_rows == 0) {
+            throw new Exception();
+        }
+
         $alumno = $result->fetch_array(MYSQLI_ASSOC);
 
         $alu = new Alumno();
@@ -140,12 +178,13 @@ class AlumnoCRUD {
     }
 
     // UPDATE
-    function updateAlumnoTutor($id_alumno, $id_tutor) {
+    function updateAlumnoTutor($id_alumno, $id_tutor)
+    {
         global $connection;
 
         $query = "UPDATE alumno SET id_tutor='$id_tutor' WHERE id_alumno = $id_alumno";
         $connection->query($query);
     }
 
-    // DELETE
+// DELETE
 }
