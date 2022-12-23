@@ -25,5 +25,4 @@ while (($row = fgetcsv($csv, 1000, ",")) !== FALSE) {
 }
 
 fclose($csv);
-
 header("Location: ../../Views/Administrador/cargar_informacion.php?tab=alumno_tutor&error=0");
