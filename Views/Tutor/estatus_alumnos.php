@@ -103,7 +103,7 @@ $controller_entrega = new entregaController();
                     ?>
 
                 </div>
-       
+
                 <br><br><br>
                 <?php include "layouts/footer-layout.php"; ?>
             </main>
