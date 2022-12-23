@@ -9,7 +9,8 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
 include_once "../../Controllers/Tutor/estatusController.php";
 include_once "../../Controllers/Alumno/actividadesController.php";
 include_once "../../Controllers/Alumno/entregaController.php";
-/*include_once "../../Views/Graphics/PercentBar.php";
+include_once "../../Views/Graphics/PercentBar.php";
+/*
 
 $controller_estatus = new estatusController();
 $controller_actividades = new actividadesController();
