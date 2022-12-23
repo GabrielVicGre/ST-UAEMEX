@@ -1,8 +1,8 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-include_once ($ruta."/Config/connectPOO.php");
-include_once ($ruta."/Models/Usuario.php");
+include_once ("../../Config/connectPOO.php");
+include_once ("../../Models/Usuario.php");
+
 
 class UsuarioCRUD {
     //CREATE

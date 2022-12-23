@@ -1,16 +1,18 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta."/Models/AlumnoCRUD.php");
-include_once ($ruta."/Models/TutorCRUD.php");
 
+include_once ("../../Models/AlumnoCRUD.php");
+include_once ("../../Models/TutorCRUD.php");
+include_once ("../../Models/UsuarioCRUD.php");
 
 class consultarController {
     private $model_alumno;
     private $model_tutor;
+    private $model_usuario;
 
     function __construct() {
         $this->model_alumno = new AlumnoCRUD();
         $this->model_tutor = new TutorCRUD();
+        $this->model_usuario = new UsuarioCRUD();
     }
 
     function listaAlumnos($match) {
@@ -23,16 +25,18 @@ class consultarController {
         ?>
         <table class="table table-hover mt-3 table-bordered" >
             <thead class="text-white" style="background-color: #1ABC9C;">
-                <th class="col-4">UNIP</th>
-                <th class="col-8">Nombre del Alumno</th>
+                <th class="col-3">No. Cuenta</th>
+                <th class="col-4">Nombre del Alumno</th>
+                <th class="col-5">Correo institucional</th>
             </thead>
             <tbody>
                 <?php
                 foreach($alumnos as $alumno) {
                     ?>
                     <tr>
-                        <td class="col-4"><?php echo $alumno->no_cuenta; ?></td>
-                        <td class="col-8 text-center"><?php echo $alumno->nombre; ?></td>
+                        <td class="col-3"><?php echo $alumno->no_cuenta; ?></td>
+                        <td class="col-4 text-center"><?php echo $alumno->nombre; ?></td>
+                        <td class="col-5"><?php echo $this->model_usuario->getUsuarioById($alumno->id_usuario)->email ?></td>
                     </tr>
                     <?php
                 }
@@ -52,16 +56,18 @@ class consultarController {
         ?>
         <table class="table table-hover table-bordered mt-3">
             <thead class="text-white" style="background-color: #1ABC9C;">
-                <th class="col-4">RFC</th>
-                <th class="col-8">Nombre del Tutor</th>
+                <th class="col-3">CLAVE</th>
+                <th class="col-4">Nombre del Tutor</th>
+                <th class="col-5">Correo institucional</th>
             </thead>
             <tbody>
                 <?php
                 foreach($tutores as $tutor) {
                     ?>
                     <tr>
-                        <td class="col-4"><?php echo $tutor->rfc; ?></td>
-                        <td class="col-8 text-center"><?php echo $tutor->nombre; ?></td>
+                        <td class="col-3"><?php echo $tutor->cve_tutor; ?></td>
+                        <td class="col-4 text-center"><?php echo $tutor->nombre; ?></td>
+                        <td class="col-5"><?php echo $this->model_usuario->getUsuarioById($tutor->id_usuario)->email ?></td>
                     </tr>
                     <?php
                 }

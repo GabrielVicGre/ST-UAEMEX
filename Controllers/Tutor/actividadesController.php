@@ -1,10 +1,10 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta."/Models/ActividadCRUD.php");
-include_once ($ruta."/Models/AlumnoCRUD.php");
-include_once ($rate."/Models/EntregaCRUD.php");
-include_once ($ruta."/Models/PlanTrabajoCRUD.php");
-include_once ($rate."/Models/TutorAlumno.php");
+
+include_once ("../../Models/ActividadCRUD.php");
+include_once ("../../Models/AlumnoCRUD.php");
+include_once ("../../Models/EntregaCRUD.php");
+include_once ("../../Models/PlanTrabajoCRUD.php");
+include_once ("../../Models/TutorAlumno.php");
 
 class actividadesController {
     private $model_actividad;

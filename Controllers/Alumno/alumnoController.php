@@ -1,16 +1,21 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-include_once ($ruta."/Models/AlumnoCRUD.php");
-include_once ($ruta."/Models/UsuarioIniciar.php");
+include_once ("../../Models/AlumnoCRUD.php");
+include_once ("../../Models/TutorCRUD.php");
+include_once ("../../Models/UsuarioIniciar.php");
+include_once ("../../Models/LicenciaturaCRUD.php");
 
 class alumnoController {
     private $model;
     private $model_Usuario;
+    private $model_tutor;
+    private $model_licenciatura;
 
     function __construct() {
         $this->model = new AlumnoCRUD();
         $this->model_Usuario = new UsuarioIniciar();
+        $this->model_tutor = new TutorCRUD();
+        $this->model_licenciatura = new LicenciaturaCRUD();
     }
 
     function getAlumnoData() {
@@ -22,7 +27,13 @@ class alumnoController {
         return $this->model_Usuario->getDatosDeUsuarioAlumno($id_user);
     }
 
-    function getDatosTutorDeAlumno($id_user){
-        return $this->model_Usuario->getDatosTutorDeAlumno($id_user);
+    function getDatosTutorDeAlumno($id_alumno){
+        //return $this->model_Usuario->getDatosTutorDeAlumno($id_user);
+        return $this->model_tutor->getTutorByAlumno($id_alumno);
+    }
+
+    function getLicenciaturaAlumno($alumno) {
+        $licenciatura = $this->model_licenciatura->getLicenciaturaById($alumno->id_licenciatura);
+        return $licenciatura->siglas;
     }
 }

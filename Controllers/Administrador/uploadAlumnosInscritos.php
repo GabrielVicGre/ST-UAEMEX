@@ -1,9 +1,9 @@
 <?php
 session_start();
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta."/Models/UsuarioCRUD.php");
-include_once ($ruta."/Models/AlumnoCRUD.php");
-include_once ($ruta."/Models/LicenciaturaCRUD.php");
+//$ruta =  $_SERVER['DOCUMENT_ROOT'].'/SistemaTutoriaFIUAEMex';
+include_once ("../../Models/UsuarioCRUD.php");
+include_once ("../../Models/AlumnoCRUD.php");
+include_once ("../../Models/LicenciaturaCRUD.php");
 
 $csv = fopen($_FILES['csv_file']['tmp_name'], "r");
 
@@ -18,7 +18,8 @@ while (($row = fgetcsv($csv, 1000, ",")) !== FALSE) {
 
     $usuario = new Usuario();
     $usuario->email = $row[5];
-    $usuario->password = RandPswd();
+    //$usuario->password = RandPswd();
+    $usuario->password = $row[2];
     $usuario->id_tipo_usuario = 3;
 
     $id_usuario = $model_usuario->createUsuario($usuario);

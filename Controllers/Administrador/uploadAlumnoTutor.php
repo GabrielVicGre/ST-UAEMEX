@@ -1,9 +1,8 @@
 <?php
 session_start();
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-include_once ($ruta."/Models/AlumnoCRUD.php");
-include_once ($ruta."/Models/TutorCRUD.php");
+include_once ("../../Models/AlumnoCRUD.php");
+include_once ("../../Models/TutorCRUD.php");
 
 $csv = fopen($_FILES['csv_file']['tmp_name'], "r");
 
@@ -14,11 +13,11 @@ $model_tutor = new TutorCRUD();
 fgetcsv($csv, 1000, ",");
 
 while (($row = fgetcsv($csv, 1000, ",")) !== FALSE) {
-    $rfc = $row[5];
+    $cve_tutor = $row[5];
     $no_cuenta = $row[2];
 
     $alumno = $model_alumno->getAlumnoByNoCuenta($no_cuenta);
-    $tutor = $model_tutor->getTutorByRfc($rfc);
+    $tutor = $model_tutor->getTutorByCveTutor($cve_tutor);
 
     $alumno->id_tutor = $tutor->id_tutor;
 

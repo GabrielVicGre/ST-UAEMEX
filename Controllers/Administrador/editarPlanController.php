@@ -1,6 +1,6 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta."/Models/PlanTrabajoCRUD.php");
+
+include_once ("../../Models/PlanTrabajoCRUD.php");
 
 class editarPlanController {
     private $model;

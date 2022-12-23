@@ -6,11 +6,6 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
     $_SESSION['seccion_menu'] = 'actividades';
 }
 
-
-/*
-BORRAR
-require_once "../../Controllers/Tutor/actividadesController.php"; */
-
 //NOTA: Corregir. La vista se esta comunicando con el modelo!
 require_once "../../Models/PlanTrabajoCRUD.php";
 require_once "../../Models/UsuarioCRUD.php";

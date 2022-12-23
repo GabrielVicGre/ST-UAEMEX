@@ -6,7 +6,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador")
     $_SESSION['seccion_menu'] = 'consultar';
 }
 
-require_once "../../Controllers/Administrador/consultarController.php";
+include_once "../../Controllers/Administrador/consultarController.php";
 
 $controller_consulta = new consultarController();
 

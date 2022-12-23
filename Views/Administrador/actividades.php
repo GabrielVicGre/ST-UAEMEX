@@ -124,7 +124,7 @@ if (isset($_GET['delete'])) {
                                     }
                                     ?>
                                 </table>
-                                <a class="btn btn-sm btn-success mt-1" href="Views/Administrador/plan_trabajo.php?id_licenciatura=1"><i class="bi bi-arrow-left-circle mx-1"> Regresar </i></a>
+                                <a class="btn btn-sm btn-success mt-1" href="Views/Administrador/plan_trabajo.php?id_licenciatura=1"><i class="bi bi-arrow-left-circle ">  </i>Regresar</a>
                             </div>
                         </div>
                     </div>

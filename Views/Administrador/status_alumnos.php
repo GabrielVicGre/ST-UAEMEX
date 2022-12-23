@@ -3,16 +3,16 @@ session_start();
 if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador" ) {
     header("Location: ../../index.php");
 }else{
-    $_SESSION['seccion_menu'] = 'status';
+    $_SESSION['seccion_menu'] = 'status_alumnos';
 }
 
 if(!isset($_GET['id_licenciatura'])) {
     $_GET['id_licenciatura'] = 1;
 }
 
-include_once "../../Controllers/Administrador/estatusController.php";
+include_once "../../Controllers/Administrador/estatusAlumnosController.php";
 
-$controller_estatus = new estatusController();
+$controller_estatus = new estatusAlumnosController();
 ?>
 
 <!DOCTYPE html>
@@ -39,17 +39,15 @@ $controller_estatus = new estatusController();
                 <div class="mt-3 card text-center">
                     <div class="card-header">
                         <div class="card-title">
-                            <?php include "layouts/lic-nav-status.php"; ?>
+                            <?php include "layouts/lic-nav-status-alumnos.php"; ?>
                         </div>
                     </div>
                     <div class="card-body">
                         <?php
-                        $controller_estatus->tablaEstatus($_GET['id_licenciatura']);
+                        $controller_estatus->tablaEstatusAlumnos($_GET['id_licenciatura']);
                         ?>
                     </div>
-                </div><br>
-                <?php include "layouts/footer-layout.php"; ?>
-
+                </div>
             </main>
         </div>
     </div>

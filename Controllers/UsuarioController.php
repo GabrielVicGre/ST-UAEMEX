@@ -1,6 +1,5 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta."/Models/UsuarioCRUD.php");
+include_once ("../../Models/UsuarioCRUD.php");
 
 class  UsuarioController {
     private $model_usuario;
@@ -10,7 +9,7 @@ class  UsuarioController {
     }
 
     function getUsuarioById($id) {
-
+        return $this->model_usuario->getUsuarioById($id);
     }
 
     function getTipoUsuario($usuario) {

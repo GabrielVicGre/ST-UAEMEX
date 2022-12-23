@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -17,6 +18,7 @@
 </head>
 
 <body>
+   
     <main>
         <div class="left-panel shadow-box">
             <div class="logo-container">
@@ -67,8 +69,7 @@
                 $(".errorSesion").fadeOut(1500);
             }, 3000);
         });
-    </script>
-
+    </script>   
 </body>
 
 </html>

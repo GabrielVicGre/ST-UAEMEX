@@ -6,11 +6,9 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno") {
 } else {
     $_SESSION['seccion_menu'] = 'actividades';
 }
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta."/Controllers/Alumno/alumnoController.php");
-include_once ($ruta."/Controllers/Alumno/actividadesController.php");
-include_once ($ruta."/Views/Tutor/Graphics/PercentBar.php");
-
+include_once ("../../Controllers/Alumno/alumnoController.php");
+include_once ("../../Controllers/Alumno/actividadesController.php");
+include_once ("../../Views/Graphics/PercentBar.php");
      
 $controller_actividades = new actividadesController();
 $controller_alumno = new alumnoController();

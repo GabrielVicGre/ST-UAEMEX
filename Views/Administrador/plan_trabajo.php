@@ -7,8 +7,9 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Administrador" 
 }
 
 /* EDITAR PLAN DE TRABJO */
-require "../../Controllers/Administrador/actividadesController.php";
-require "../../Controllers/Administrador/editarPlanController.php";
+include_once "../../Controllers/Administrador/actividadesController.php";
+include_once "../../Controllers/Administrador/editarPlanController.php";
+
 $controllerPlan = new editarPlanController();
 $controllerActvidades = new actividadesController();
 if (isset($_POST['selectIdAct'])) {

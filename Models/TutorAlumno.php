@@ -1,7 +1,6 @@
 <?php
 
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta.'/Config/connectPOO.php');
+include_once ('../../Config/connectPOO.php');
 
 class TutorAlumno{
     protected $id_tutor;

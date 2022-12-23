@@ -1,16 +1,14 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-include_once ($ruta."/Config/connectPOO.php");
-include_once ($ruta."/Models/Tutor.php");
+include_once ("../../Config/connectPOO.php");
+include_once ("../../Models/Tutor.php");
 
 class TutorCRUD {
-
     //CREATE
     function createTutor($tutor) {
         global $connection;
 
-        $query = "INSERT INTO tutor VALUES(NULL, '$tutor->nombre', '$tutor->rfc', $tutor->id_usuario, $tutor->id_licenciatura)";
+        $query = "INSERT INTO tutor VALUES(NULL, '$tutor->nombre', '$tutor->cve_tutor', $tutor->id_usuario, $tutor->id_licenciatura)";
         $connection->query($query);
     }
 
@@ -25,23 +23,23 @@ class TutorCRUD {
         $tu = new Tutor();
         $tu->id_tutor = $tutor['id_tutor'];
         $tu->nombre = $tutor['nombre'];
-        $tu->rfc = $tutor['rfc'];
+        $tu->cve_tutor = $tutor['cve_tutor'];
         $tu->id_usuario = $tutor['id_usuario'];
         $tu->id_licenciatura = $tutor['id_licenciatura'];
         return $tu;
     }
 
-    function getTutorByRfc($rfc) {
+    function getTutorByCveTutor($cve_tutor) {
         global $connection;
 
-        $query = "SELECT * FROM tutor WHERE rfc = '$rfc'";
+        $query = "SELECT * FROM tutor WHERE cve_tutor = '$cve_tutor'";
         $result = $connection->query($query);
         $tutor = $result->fetch_array(MYSQLI_ASSOC);
 
         $tu = new Tutor();
         $tu->id_tutor = $tutor['id_tutor'];
         $tu->nombre = $tutor['nombre'];
-        $tu->rfc = $tutor['rfc'];
+        $tu->cve_tutor = $tutor['cve_tutor'];
         $tu->id_usuario = $tutor['id_usuario'];
         $tu->id_licenciatura = $tutor['id_licenciatura'];
         return $tu;
@@ -58,7 +56,7 @@ class TutorCRUD {
             $tu = new Tutor();
             $tu->id_tutor = $tutor['id_tutor'];
             $tu->nombre = $tutor['nombre'];
-            $tu->rfc = $tutor['rfc'];
+            $tu->cve_tutor = $tutor['cve_tutor'];
             $tu->id_usuario = $tutor['id_usuario'];
             $tu->id_licenciatura = $tutor['id_licenciatura'];
             array_push($tutores, $tu);
@@ -78,7 +76,7 @@ class TutorCRUD {
             $tu = new Tutor();
             $tu->id_tutor = $tutor['id_tutor'];
             $tu->nombre = $tutor['nombre'];
-            $tu->rfc = $tutor['rfc'];
+            $tu->cve_tutor = $tutor['cve_tutor'];
             $tu->id_usuario = $tutor['id_usuario'];
             $tu->id_licenciatura = $tutor['id_licenciatura'];
             array_push($tutores, $tu);
@@ -98,13 +96,30 @@ class TutorCRUD {
             $tu = new Tutor();
             $tu->id_tutor = $tutor['id_tutor'];
             $tu->nombre = $tutor['nombre'];
-            $tu->rfc = $tutor['rfc'];
+            $tu->cve_tutor = $tutor['cve_tutor'];
             $tu->id_usuario = $tutor['id_usuario'];
             $tu->id_licenciatura = $tutor['id_licenciatura'];
             array_push($tutores, $tu);
         }
 
         return $tutores;
+    }
+
+    function getTutorByAlumno($id_alumno) {
+        global $connection;
+
+        $query = "SELECT * FROM tutor WHERE id_tutor = (SELECT id_tutor FROM alumno WHERE alumno.id_alumno = $id_alumno)";
+
+        $result = $connection->query($query);
+        $tutor = $result->fetch_array(MYSQLI_ASSOC);
+
+        $tu = new Tutor();
+        $tu->id_tutor = $tutor['id_tutor'];
+        $tu->nombre = $tutor['nombre'];
+        $tu->cve_tutor = $tutor['cve_tutor'];
+        $tu->id_usuario = $tutor['id_usuario'];
+        $tu->id_licenciatura = $tutor['id_licenciatura'];
+        return $tu;
     }
 
     //UPDATE

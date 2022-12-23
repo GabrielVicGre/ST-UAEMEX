@@ -1,13 +1,12 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta."/Config/connectPOO.php");
-include_once ($ruta."/Models/Alumno.php");
+
+include_once ("../../Config/connectPOO.php");
+include_once ("../../Models/Alumno.php");
 
 class AlumnoCRUD {
     // CREATE
     function createAlumno($alumno) {
         global $connection;
-
         $query = "INSERT INTO alumno VALUES (NULL, '$alumno->nombre', '$alumno->no_cuenta', $alumno->id_usuario, $alumno->id_licenciatura, NULL)";
         $connection->query($query);
     }
@@ -102,6 +101,20 @@ class AlumnoCRUD {
             array_push($alumnos, $this->getAlumnoById($row['id_alumno']));
         }
     
+        return $alumnos;
+    }
+
+    function getAlumnosByLicenciatura($id_licenciatura) {
+        global $connection;
+
+        $alumnos = array();
+
+        $query = "SELECT * FROM alumno WHERE id_licenciatura = $id_licenciatura";
+        $result = $connection->query($query);
+        while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+            array_push($alumnos, $this->getAlumnoById($row['id_alumno']));
+        }
+
         return $alumnos;
     }
 

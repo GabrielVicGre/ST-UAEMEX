@@ -1,7 +1,7 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta."/Config/connectPOO.php");
-include_once ($ruta."/Models/Actividad.php");
+
+include_once ("../../Config/connectPOO.php");
+include_once ("../../Models/Actividad.php");
 
 class ActividadCRUD {
 

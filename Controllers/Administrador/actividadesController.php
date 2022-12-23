@@ -1,6 +1,6 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta."/Models/ActividadCRUD.php");
+
+include_once ("../../Models/ActividadCRUD.php");
 
 class actividadesController{
     private $model;

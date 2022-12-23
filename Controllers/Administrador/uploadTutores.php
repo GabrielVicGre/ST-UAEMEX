@@ -1,10 +1,9 @@
 <?php
 session_start();
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
 
-include_once ($ruta."/Models/UsuarioCRUD.php");
-include_once ($ruta."/Models/TutorCRUD.php");
-include_once ($ruta."/Models/LicenciaturaCRUD.php");
+include_once ("../../Models/UsuarioCRUD.php");
+include_once ("../../Models/TutorCRUD.php");
+include_once ("../../Models/LicenciaturaCRUD.php");
 
 $csv = fopen($_FILES['csv_file']['tmp_name'], "r");
 
@@ -19,14 +18,15 @@ while (($row = fgetcsv($csv, 1000, ",")) !== FALSE) {
 
     $usuario = new Usuario();
     $usuario->email = $row[4];
-    $usuario->password = RandPswd();
+    //$usuario->password = RandPswd();
+    $usuario->password = $row[2];
     $usuario->id_tipo_usuario = 2;
 
     $id_usuario = $model_usuario->createUsuario($usuario);
 
     $tutor = new Tutor();
     $tutor->nombre = $row[3];
-    $tutor->rfc = $row[2];
+    $tutor->cve_tutor = $row[2];
     $tutor->id_usuario = $id_usuario;
     $tutor->id_licenciatura = $model_licenciatura->getLicenciaturaBySiglas($row[1])->id_licenciatura;
 

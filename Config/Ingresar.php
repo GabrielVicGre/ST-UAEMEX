@@ -1,6 +1,7 @@
 <?php
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include($ruta.'/Config/connectPOO.php');
+
+include_once('connectPOO.php');
+
 $secretkey = "6LdYZHAjAAAAAENeEpFGfuj2Xpao9KV50ymJMSv9"; 
 
 

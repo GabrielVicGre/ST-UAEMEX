@@ -7,10 +7,9 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Alumno") {
     $_SESSION['seccion_menu'] = 'actividades';
 }
 
-$ruta =  $_SERVER['DOCUMENT_ROOT'];
-include_once ($ruta."/Controllers/Alumno/alumnoController.php");
-include_once ($ruta."/Controllers/Alumno/actividadesController.php");
-include_once ($ruta."/Controllers/Alumno/entregaController.php");
+include_once ("../../Controllers/Alumno/alumnoController.php");
+include_once ("../../Controllers/Alumno/actividadesController.php");
+include_once ("../../Controllers/Alumno/entregaController.php");
 
 $controller_actividades = new actividadesController();
 $controller_alumno = new alumnoController();
@@ -65,7 +64,7 @@ if(isset($_POST['submit'])) {
                             }
                         ?>
                     </div>
-                    <br><a href="Views/Alumno/actividades.php" class="mt-3 btn btn-sm btn-success"><i class="bi bi-arrow-left-circle mx-2"></i>Regresar </a>
+                    <br><a href="Views/Alumno/actividades.php" class="mt-3 btn btn-sm btn-success"><i class="bi bi-arrow-left-circle mx-1"></i>Regresar </a>
                 </div>
                 <br><br><br>
                 <?php include "layouts/footer-layout.php"; ?>
