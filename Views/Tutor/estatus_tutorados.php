@@ -38,24 +38,25 @@ $controller_entrega = new entregaController();
                 </div>
                 De click en el nombre de uno de sus tutorados para conocer las actividades que ha entregado.
                 <div class="p-5" id="accordion">
-                    <?php
-                    $alumnos = $controller_estatus->getAlumnos();
+                        <?php
+                        $alumnos = $controller_estatus->getAlumnos();
 
-                    $count = 0;
-                    foreach ($alumnos as $alumno) {
-                    ?>
+                        $count = 0;
+                        foreach ($alumnos as $alumno) {
+                        ?>
                         <div class="card">
-                            <div class="card-header" id="heading<?php echo $count; ?>">
-                                <h5 class="mb-0">
-                                    <button class="btn container" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $count; ?>" aria-expanded="false" aria-controls="collapse<?php echo $count; ?>">
-                                        <div class=row>
-                                            <div class="col-3"><?php echo $alumno->no_cuenta; ?></div>
-                                            <div class="col-3"><?php echo $alumno->nombre; ?></div>
-                                            <div class="col-6">
-                                                <?php
-                                                $progress = new PercentBar($controller_actividades->getEntregaRate($alumno->id_alumno));
-                                                $progress->display();
-                                                ?>
+                                <div class="card-header" id="heading<?php echo $count; ?>">
+                                    <h5 class="mb-0">
+                                        <button class="btn container" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $count; ?>" aria-expanded="false" aria-controls="collapse<?php echo $count; ?>">
+                                            <div class=row>
+                                                <div class="col-3"><?php echo $alumno->no_cuenta; ?></div>
+                                                <div class="col-3"><?php echo $alumno->nombre; ?></div>
+                                                <div class="col-6">
+                                                    <?php
+                                                    $progress = new PercentBar($controller_actividades->getEntregaRate($alumno->id_alumno));
+                                                    $progress->display();
+                                                    ?>
+                                                </div>
                                             </div>
                                         </button>
                                     </h5>
@@ -95,23 +96,19 @@ $controller_entrega = new entregaController();
                                         </table>
                                     </div>
                                 </div>
-                            </div>
+                        </div>
                         <?php
                             $count++;
                             }
                         ?>
                             
-                    </div>
                 </div>
+                
                 <br><br><br>
                 <?php include "layouts/footer-layout.php"; ?>
-
-
             </main>
         </div>
     </div>
-
-
 
 </body>
 

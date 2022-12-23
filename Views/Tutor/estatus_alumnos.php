@@ -57,56 +57,55 @@ $controller_entrega = new entregaController();
                                                 $progress->display();
                                                 ?>
                                             </div>
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapse<?php echo $count; ?>" class="collapse" aria-labelledby="heading<?php echo $count; ?>">
-                                    <div class="card-body">
-                                        <table class="table table-hover">
-                                            <?php
-                                            $actividades = $controller_actividades->getActividadesByAlumno($alumno->id_alumno);
+                                        </div>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse<?php echo $count; ?>" class="collapse" aria-labelledby="heading<?php echo $count; ?>">
+                                <div class="card-body">
+                                    <table class="table table-hover">
+                                        <?php
+                                        $actividades = $controller_actividades->getActividadesByAlumno($alumno->id_alumno);
 
-                                            foreach ($actividades as $actividad) {
-                                            ?>
-                                                <tr>
-                                                    <td><?php echo $actividad->clave_actividad; ?></td>
-                                                    <td class="text-truncate">
-                                                        <?php echo $actividad->desc_actividad; ?>
-                                                    </td>
-                                                    <td class="col-1">
-                                                        <?php
-                                                        $status = $controller_actividades->getStatus($actividad->id_actividad, $alumno->id_alumno);
+                                        foreach ($actividades as $actividad) {
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $actividad->clave_actividad; ?></td>
+                                                <td class="text-truncate">
+                                                    <?php echo $actividad->desc_actividad; ?>
+                                                </td>
+                                                <td class="col-1">
+                                                    <?php
+                                                    $status = $controller_actividades->getStatus($actividad->id_actividad, $alumno->id_alumno);
 
-                                                        if ($status == true) {
-                                                        ?>
-                                                            <i class="bi bi-check-square"></i>
-                                                        <?php
-                                                        } else {
-                                                        ?>
-                                                            <i class="bi bi-square"></i>
-                                                        <?php
-                                                        }
-                                                        ?>
-                                                    </td>
-                                                </tr>
-                                            <?php
-                                            }
-                                            ?>
-                                        </table>
-                                    </div>
+                                                    if ($status == true) {
+                                                    ?>
+                                                        <i class="bi bi-check-square"></i>
+                                                    <?php
+                                                    } else {
+                                                    ?>
+                                                        <i class="bi bi-square"></i>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </table>
                                 </div>
                             </div>
-                        <?php
-                            $count++;
-                            }
-                        ?>
-                            
-                    </div>
+                        </div>
+                    <?php
+                        $count++;
+                    }
+                    ?>
+
                 </div>
+       
                 <br><br><br>
                 <?php include "layouts/footer-layout.php"; ?>
-
-
             </main>
         </div>
     </div>
