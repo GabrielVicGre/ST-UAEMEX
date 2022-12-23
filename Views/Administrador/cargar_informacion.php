@@ -74,7 +74,7 @@ if (!isset($_GET['tab'])) {
                                         </form>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade <?php echo $_GET['tab'] == "alumno-tutor" ? "show active" : "" ?>" id="alumno-tutor">
+                                <div class="tab-pane fade <?php echo $_GET['tab'] == "alumno_tutor" ? "show active" : "" ?>" id="alumno_tutor">
                                     <h5 class="card-title">Alumno - Tutor</h5>
                                     <p class="card-text">Asegurate que el archivo que subas tenga la extención .csv</p>
                                     <div>
