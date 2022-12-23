@@ -6,12 +6,14 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
     $_SESSION['seccion_menu'] = 'estatus';
 }
 
-/*require_once "../../Controllers/Tutor/estatusController.php";
+require_once "../../Controllers/Tutor/estatusController.php";
+/*
 require_once "../../Controllers/Alumno/actividadesController.php";
 require_once "../../Controllers/Alumno/entregaController.php";
-require_once "../../Views/Graphics/PercentBar.php";
+require_once "../../Views/Graphics/PercentBar.php";*/
 
 $controller_estatus = new estatusController();
+/*
 $controller_actividades = new actividadesController();
 $controller_entrega = new entregaController();
 */
@@ -38,13 +40,15 @@ $controller_entrega = new entregaController();
                 </div>
                 De click en el nombre de uno de sus tutorados para conocer las actividades que ha entregado.
                 
-                <!--
+                
                 <div class="p-5" id="accordion">
                     <?php
                     $alumnos = $controller_estatus->getAlumnos();
-                    $count = 0;
+                /*  $count = 0;
                     foreach ($alumnos as $alumno) {
+                */
                     ?>
+                    <!--
                         <div class="card">
                             <div class="card-header" id="heading<?php echo $count; ?>">
                                 <h5 class="mb-0">
@@ -97,13 +101,14 @@ $controller_entrega = new entregaController();
                                 </div>
                             </div>
                         </div>
+                    ->
                     <?php
-                        $count++;
-                    }
+                   /*     $count++;
+                    }*/
                     ?>
 
                 </div>
-                -->
+                
 
 
                 <br><br><br>        
