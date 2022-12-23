@@ -39,7 +39,7 @@ $controller_entrega = new entregaController();
                 </div>
                 De click en el nombre de uno de sus tutorados para conocer las actividades que ha entregado.
                 
-           
+         
 
 
                 <br><br><br>        
