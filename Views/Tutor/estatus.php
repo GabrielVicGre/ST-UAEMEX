@@ -6,16 +6,18 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
     $_SESSION['seccion_menu'] = 'estatus';
 }
 
-include_once "../../Controllers/Tutor/estatusController.php";
+/*include_once "../../Controllers/Tutor/estatusController.php";
 include_once "../../Controllers/Alumno/actividadesController.php";
-include_once "../../Controllers/Alumno/entregaController.php";
-include_once "../../Views/Graphics/PercentBar.php";
-/*
+include_once "../../Controllers/Alumno/entregaController.php";*/
 
+include_once "../../Views/Graphics/PercentBar.php";
+
+/*
 $controller_estatus = new estatusController();
 $controller_actividades = new actividadesController();
 $controller_entrega = new entregaController();
 */
+
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +41,7 @@ $controller_entrega = new entregaController();
                 </div>
                 De click en el nombre de uno de sus tutorados para conocer las actividades que ha entregado.
                 
-                
-          
+              
 
 
                 <br><br><br>        

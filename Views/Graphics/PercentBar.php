@@ -3,7 +3,7 @@
 /*$root = $_SERVER['DOCUMENT_ROOT'];
 require_once($root . "/SistemaTutoriaFIUAEMex/Views/Graphics/Displayable.php");*/
 
-include_once '../../Views/Graphics/Displayable.php';
+include_once "../../Views/Graphics/Displayable.php";
 
 
 /**
@@ -41,7 +41,6 @@ Class PercentBar implements Displayable{
      */
     function __construct($value) {
         $this -> value = $value;
-
         $this->grade = $value > 50 ? grade::HIGH : grade::LOW;
     }
 
@@ -61,4 +60,5 @@ Class PercentBar implements Displayable{
             </div>
         <?php
     }
+
 }
