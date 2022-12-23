@@ -6,7 +6,7 @@
     $database = "bd_sistematutoria";
     //Initializes MySQLi
     $connection = mysqli_init();
-    mysqli_ssl_set($connection,NULL,NULL, '../Assets/SSL/BaltimoreCyberTrustRoot.crt.pem', NULL, NULL);
+    mysqli_ssl_set($connection,NULL,NULL,'Assets/SSL/BaltimoreCyberTrustRoot.crt.pem', NULL, NULL);
     // Establish the connection
     mysqli_real_connect($connection,$server,$user,$password,$database, 3306, NULL, MYSQLI_CLIENT_SSL);
 
@@ -26,7 +26,8 @@
     if ($connection->connect_errno) {
         echo "Fallo de conexion a la base de datos";
     }
-*/
+    */
+
 /*
 $host = "localhost";
 $user = "cnopedom_acttu";
