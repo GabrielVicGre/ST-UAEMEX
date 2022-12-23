@@ -1,13 +1,12 @@
 <?php
 
-    $ruta = $_SERVER["DOCUMENT_ROOT"];
     $user = "Administrador@sbd1-tutoria";
     $password = "3Fl760wnL8b";
     $server = "sbd1-tutoria.mysql.database.azure.com";
     $database = "bd_sistematutoria";
     //Initializes MySQLi
     $connection = mysqli_init();
-    mysqli_ssl_set($connection,NULL,NULL, $ruta.'/Assets/SSL/BaltimoreCyberTrustRoot.crt.pem', NULL, NULL);
+    mysqli_ssl_set($connection,NULL,NULL, '../Assets/SSL/BaltimoreCyberTrustRoot.crt.pem', NULL, NULL);
     // Establish the connection
     mysqli_real_connect($connection,$server,$user,$password,$database, 3306, NULL, MYSQLI_CLIENT_SSL);
 

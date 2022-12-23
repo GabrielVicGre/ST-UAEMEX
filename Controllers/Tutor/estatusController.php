@@ -18,7 +18,6 @@ class estatusController {
     function getAlumnos() {
         $tutor = $this->model_tutor->getTutorByUserId($_SESSION['id_usuario']);
         $alumnos = $this->model_alumno->getAlumnosByTutor($tutor->id_tutor);
-
         return $alumnos;
     }
 }
