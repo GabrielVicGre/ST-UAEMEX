@@ -35,7 +35,7 @@ while (($row = fgetcsv($csv, 1000, ",")) !== FALSE) {
 
 fclose($csv);
 
-header("Location: ../../Views/Administrador/cargar_informacion.php?tab=tutores&error=0");
+header("Location: ../../Views/Administrador/cargar_informacion.php?tab=tutores&msg=1");
 
 function RandPswd() {
     //Genera una contraseña aleatoria de 5 letras y 5 numeros. ej. lsizy64738

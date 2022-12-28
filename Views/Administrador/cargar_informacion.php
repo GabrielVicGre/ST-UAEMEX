@@ -59,9 +59,16 @@ if (!isset($_GET['tab'])) {
                                     <div>
                                         <?php $id = 0; ?>
                                         <form id="drag-and-drop-form-<?php echo $id; ?>" enctype="multipart/form-data" action="Controllers/Administrador/uploadAlumnosInscritos.php" method="POST">
-                                            <?php
-                                            include "layouts/drag_and_drop_csv.php";
-                                            ?>
+                                            <div class="col-sm-6 m-auto">
+                                                <?php
+                                                include "layouts/drag_and_drop_csv.php";
+                                                if (isset($_GET['msg']) ) {
+                                                    if ($_GET['msg'] == 0) {
+                                                        include 'layouts/upload_success.php';
+                                                    }
+                                                }
+                                                ?>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -71,9 +78,16 @@ if (!isset($_GET['tab'])) {
                                     <div>
                                         <?php $id = 1; ?>
                                         <form id="drag-and-drop-form-<?php echo $id; ?>" enctype="multipart/form-data" action="Controllers/Administrador/uploadTutores.php" method="POST">
-                                            <?php
-                                            include "layouts/drag_and_drop_csv.php";
-                                            ?>
+                                            <div class="col-sm-6 m-auto">
+                                                <?php
+                                                include "layouts/drag_and_drop_csv.php";
+                                                if (isset($_GET['msg']) ) {
+                                                    if ($_GET['msg'] == 1) {
+                                                        include 'layouts/upload_success.php';
+                                                    }
+                                                }
+                                                ?>
+                                            </div>    
                                         </form>
                                     </div>
                                 </div>
@@ -83,9 +97,16 @@ if (!isset($_GET['tab'])) {
                                     <div>
                                         <?php $id = 2; ?>
                                         <form id="drag-and-drop-form-<?php echo $id; ?>" enctype="multipart/form-data" action="Controllers/Administrador/uploadAlumnoTutor.php" method="POST">
-                                            <?php
-                                            include "layouts/drag_and_drop_csv.php";
-                                            ?>
+                                            <div class="col-sm-6 m-auto">
+                                                <?php
+                                                include "layouts/drag_and_drop_csv.php";
+                                                if (isset($_GET['msg']) ) {
+                                                    if ($_GET['msg'] == 2) {
+                                                        include 'layouts/upload_success.php';
+                                                    }
+                                                }
+                                                ?>
+                                            </div>    
                                         </form>
                                     </div>
                                 </div>
@@ -95,9 +116,16 @@ if (!isset($_GET['tab'])) {
                                     <div>
                                         <?php $id = 3; ?>
                                         <form id="drag-and-drop-form-<?php echo $id; ?>" enctype="multipart/form-data" action="Controllers/Administrador/uploadMaterias.php" method="POST">
-                                            <?php
-                                            include "layouts/drag_and_drop_csv.php";
-                                            ?>
+                                            <div class="col-sm-6 m-auto">
+                                                <?php
+                                                include "layouts/drag_and_drop_csv.php";
+                                                if (isset($_GET['msg']) ) {
+                                                    if ($_GET['msg'] == 3) {
+                                                        include 'layouts/upload_success.php';
+                                                    }
+                                                }
+                                                ?>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

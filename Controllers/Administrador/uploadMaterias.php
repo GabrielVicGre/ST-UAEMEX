@@ -28,5 +28,5 @@ while (($row = fgetcsv($csv, 1000, ",")) !== FALSE) {
 
 fclose($csv);
 
-header("Location: ../../Views/Administrador/cargar_informacion.php?tab=materias&error=0");
+header("Location: ../../Views/Administrador/cargar_informacion.php?tab=materias&msg=3");
 
