@@ -1,6 +1,6 @@
 <?php
 
-    
+  /*  
     $user = "Administrador@sbd1-tutoria";
     $password = "3Fl760wnL8b";
     $server = "sbd1-tutoria.mysql.database.azure.com";
@@ -14,9 +14,9 @@
     if (mysqli_connect_errno()) {
         die('Failed to connect to MySQL: '.mysqli_connect_error());
     }
-
+*/
    
-/*
+
     $host = "localhost";
     $user = "root";
     $pass = "";
@@ -27,7 +27,7 @@
     if ($connection->connect_errno) {
         echo "Fallo de conexion a la base de datos";
     }
-*/
+
 /*
 $host = "localhost";
 $user = "cnopedom_acttu";

@@ -10,6 +10,8 @@ header {
   text-align: center;
   border-top: 5px solid #579472;
   border-bottom: 5px solid #579472;
+  /*border-top: 5px solid white;
+  border-bottom: 5px solid white;*/
 }
 
 .active {
@@ -30,9 +32,10 @@ header {
 }
 
 
-
 .sidebar {
-  background: linear-gradient(to right, #579472, #53876F);
+  background: #447c66;
+  /*background: linear-gradient(to right, #579472, #53876F);*/
+  /*background: linear-gradient(to right, #47816c, #42725c );*/
 }
 
 .colorFondo {
@@ -191,7 +194,6 @@ header {
 
 .btnSalir:hover{
   background-color: #61997c;
- 
 }
 
 .icon-Salir{

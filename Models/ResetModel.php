@@ -18,6 +18,8 @@ class ResetModel {
         $connection->query($query);
         $query = "DELETE FROM usuario WHERE id_usuario > 3;";
         $connection->query($query);
+        $query = "DELETE FROM materia;";
+        $connection->query($query);
        // $query = "DELETE FROM usuario WHERE id_usuario > 3;";
        // $connection->query($query);
         header("Location: ../Views/Administrador/cargar_informacion.php");

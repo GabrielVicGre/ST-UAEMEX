@@ -46,6 +46,9 @@ if (!isset($_GET['tab'])) {
                                 <li class="nav-item">
                                     <a href="#alumno-tutor" style="border-radius: 5px 5px 0px 0px !important; color: gray;" class="nav-link <?php echo $_GET['tab'] == "alumno-tutor" ? "active" : "" ?>" data-bs-toggle="tab">Alumno - Tutor</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="#materias" style="border-radius: 5px 5px 0px 0px !important; color: gray;" class="nav-link <?php echo $_GET['tab'] == "materias" ? "active" : "" ?>" data-bs-toggle="tab">Materias</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="card-body">
@@ -86,6 +89,18 @@ if (!isset($_GET['tab'])) {
                                         </form>
                                     </div>
                                 </div>
+                                <div class="tab-pane fade <?php echo $_GET['tab'] == "materias" ? "show active" : "" ?>" id="materias">
+                                    <h5 class="card-title">Materias</h5>
+                                    <p class="card-text">Asegurate que el archivo que subas tenga la extención .csv</p>
+                                    <div>
+                                        <?php $id = 3; ?>
+                                        <form id="drag-and-drop-form-<?php echo $id; ?>" enctype="multipart/form-data" action="Controllers/Administrador/uploadMaterias.php" method="POST">
+                                            <?php
+                                            include "layouts/drag_and_drop_csv.php";
+                                            ?>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,6 +120,7 @@ if (!isset($_GET['tab'])) {
     new DragAndDrop(0);
     new DragAndDrop(1);
     new DragAndDrop(2);
+    new DragAndDrop(3);
 </script>
 
 </html>

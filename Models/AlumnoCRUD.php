@@ -120,10 +120,10 @@ class AlumnoCRUD
         $query = "SELECT * FROM alumno WHERE id_tutor = $id_tutor";
         $result = $connection->query($query);
 
-        if($result->num_rows == 0) {
+        /*  if($result->num_rows == 0) {
             throw new Exception();
         }
-
+        */
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             array_push($alumnos, $this->getAlumnoById($row['id_alumno']));
         }
@@ -140,9 +140,9 @@ class AlumnoCRUD
         $query = "SELECT * FROM alumno WHERE id_licenciatura = $id_licenciatura";
         $result = $connection->query($query);
 
-        if($result->num_rows == 0) {
+      /*  if($result->num_rows == 0) {
             throw new Exception();
-        }
+        }*/
 
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
             array_push($alumnos, $this->getAlumnoById($row['id_alumno']));
