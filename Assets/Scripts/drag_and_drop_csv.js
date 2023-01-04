@@ -1,12 +1,10 @@
 class DragAndDrop {
     constructor(id) {
         this.id = id;
-
         this.dropArea = document.getElementById("drop-area-" + id);
         this.fileInput = document.getElementById("file-input-" + id);
         this.submitBtn = document.getElementById("submit-btn-" + id);
         this.loadingBtn = document.getElementById("loading-btn-" + id);
-
         this.dropArea.addEventListener("mouseenter", this.highlight.bind(this));
         this.dropArea.addEventListener("mouseover", this.highlight.bind(this));
         this.dropArea.addEventListener("mouseleave", this.unhighlight.bind(this));

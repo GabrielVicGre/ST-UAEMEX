@@ -2,16 +2,19 @@
 
 include_once('connectPOO.php');
 
-$secretkey = "6LdYZHAjAAAAAENeEpFGfuj2Xpao9KV50ymJMSv9"; 
+$verificado = true;
+//$secretkey = "6LdYZHAjAAAAAENeEpFGfuj2Xpao9KV50ymJMSv9"; 
 
 
+/*
 if (!isset($_POST["g-recaptcha-response"]) || empty($_POST["g-recaptcha-response"])) {
     exit("Debes completar el captcha");
 }
+*/
 
 # Antes de comprobar usuario y contraseña, vemos si resolvieron el captcha
-$token = $_POST["g-recaptcha-response"];
-$verificado = verificarToken($token, $secretkey);
+//$token = $_POST["g-recaptcha-response"];
+//$verificado = verificarToken($token, $secretkey);
 # Si no ha pasado la prueba
 if ($verificado) {
     //echo "Has completado la prueba :)";
@@ -73,7 +76,7 @@ function verificarToken($token, $claveSecreta){
     # Si hay problemas con la petición (por ejemplo, que no hay internet o algo así)
     # entonces se regresa false. Este NO es un problema con el captcha, sino con la conexión
     # al servidor de Google
-    if ($resultado === false) {
+    if ($resultado == false) {
         # Error haciendo petición
         return false;
     }

@@ -142,7 +142,6 @@ if (!isset($_GET['tab'])) {
     </div>
 </body>
 
-
 <script src="Assets/Scripts/drag_and_drop_csv.js"></script>
 <script>
     new DragAndDrop(0);

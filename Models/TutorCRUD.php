@@ -2,6 +2,7 @@
 
 include_once ("../../Config/connectPOO.php");
 include_once ("../../Models/Tutor.php");
+include_once ("../../Models/Materia.php");
 
 class TutorCRUD {
     //CREATE
@@ -122,7 +123,30 @@ class TutorCRUD {
         return $tu;
     }
 
-    //UPDATE
 
-    //DELETE
+    
+    function getMateriasByIdTutor($id_tutor){
+        global $connection;
+
+        $query = "SELECT grupo.*, materia.clave, materia.nombre FROM grupo
+        INNER JOIN materia ON grupo.id_materia= materia.id_materia 
+        WHERE grupo.id_tutor =  $id_tutor";
+        $result = $connection->query($query);
+
+       /*
+       $materias = array(); 
+       while($materias = $result->fetch_array(MYSQLI_ASSOC)) {
+            $tu = new Tutor();
+            $tu->id_tutor = $materias['id_tutor'];
+            $tu->nombre = $materias['nombre'];
+            $tu->cve_tutor = $materias['cve_tutor'];
+            array_push($tutores, $tu);
+        }*/
+
+        return $result;
+    }
+    
+
+    
+    
 }

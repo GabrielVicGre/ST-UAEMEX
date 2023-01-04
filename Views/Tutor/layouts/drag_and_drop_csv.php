@@ -1,5 +1,3 @@
-<!--<form id="drag-and-drop-form" enctype="multipart/form-data" action="Controllers/Administrador/uploadAlumnosInscritos.php" method="POST">-->
-    <div class="col-sm-6 m-auto">
         <div>
             <input type="file" id="file-input-<?php echo $id;?>" name="csv_file" required>
             <label for="file-input-<?php echo $id;?>" id="drop-area-<?php echo $id;?>" class="drop-area">
@@ -20,12 +18,5 @@
             </button>
         </div>
 
-        <?php
-            if(isset($_GET['error'])) {
-                if($_GET['error'] == 0) {
-                    include 'layouts/upload_success.php';
-                }
-            }
-        ?>
-    </div>
-<!--</form>-->
+       
+   

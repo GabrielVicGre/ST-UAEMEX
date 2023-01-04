@@ -1,10 +1,33 @@
 <?php
 
 include_once ("../../Config/connectPOO.php");
-include_once("../../Models/Alumno.php");
+//include_once("../../Models/Alumno.php");
 
-class AlumnoProfesorCRUD {
-    //CREATE
+class AlumnosInscritosCRUD {
+
+    function createNewgroupRegistration($id_alumno,$id_grupo) {
+        global $connection;
+        $query = "INSERT INTO alumnos_inscritos VALUES ('$id_alumno','$id_grupo')";
+        $connection->query($query);
+    }
+
+    function getNumAlumPerGroup($id_grupo){
+        global $connection;
+        $query = "SELECT COUNT(id_grupo) as total FROM alumnos_inscritos WHERE id_grupo = '$id_grupo' ";
+        $total = $connection->query($query);
+        $num = $total->fetch_array(MYSQLI_ASSOC);
+        return $num['total'];   
+    }
+
+    function delAlumInscAndGroup($id_grupo){
+        global $connection;
+        $query = "DELETE FROM alumnos_inscritos WHERE id_grupo = '$id_grupo'; ";
+        $connection->query($query);
+        $query = "DELETE FROM grupo WHERE id_grupo = '$id_grupo'; ";
+        $connection->query($query);
+    }
+   
+   /* //CREATE
     function createAlumnoProfesor($id_alumno, $id_tutor, $id_materia) {
         global $connection;
     
@@ -38,7 +61,7 @@ class AlumnoProfesorCRUD {
 
         return $alumnos;
     }
-
+*/
     //UPDATE
     //DELETE
 }

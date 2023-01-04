@@ -22,7 +22,7 @@
         <li class="nav-item mx-1">
             <a class="nav-link text-white <?php echo $_SESSION['seccion_menu'] == 'carga_alumnos' ? 'selected'  : '' ?>" href="Views/Tutor/carga_alumnos.php">
                 <i class="bi bi-cloud-arrow-up-fill mx-2"></i>
-                Cargar alumnos
+                 Grupos
             </a>
         </li>
         <li class="nav-item mx-1">
