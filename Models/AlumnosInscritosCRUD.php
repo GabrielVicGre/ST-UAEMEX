@@ -26,6 +26,15 @@ class AlumnosInscritosCRUD {
         $query = "DELETE FROM grupo WHERE id_grupo = '$id_grupo'; ";
         $connection->query($query);
     }
+
+    function getDataGroupPerId($id_grupo){
+        global $connection;
+        $query = "SELECT g.*, m.clave, m.nombre FROM grupo g INNER JOIN materia m ON m.id_materia = g.id_materia
+        WHERE g.id_grupo = '$id_grupo';";
+        $result = $connection->query($query);
+        $grupo = $result->fetch_array(MYSQLI_ASSOC);
+        return $grupo;  
+    }
    
    /* //CREATE
     function createAlumnoProfesor($id_alumno, $id_tutor, $id_materia) {

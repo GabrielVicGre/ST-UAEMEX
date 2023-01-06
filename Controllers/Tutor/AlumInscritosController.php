@@ -34,6 +34,10 @@ class AlumInscritosController {
        header("Location: ../../Views/Tutor/carga_alumnos.php");
     }
 
+    function getDatosGrupoPorId($id_grupo){
+        $datosgrupo = $this->model_alumnos_inscritos->getDataGroupPerId($id_grupo);
+        return $datosgrupo;
+    }
 
    /* function getMateriasTutorByIdUser($id_usuario){
         $tutor = $this->model_tutor->getTutorByUserId($id_usuario);

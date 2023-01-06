@@ -20,16 +20,25 @@ class MateriaCRUD {
         $result = $connection->query($query);
         $materia = $result->fetch_array(MYSQLI_ASSOC);
 
-        $mat = new Materia;
+        $mat = new Materia();
         $mat->id_materia = $materia['id_materia'];
-        $mat->cve_materia = $materia['cve_materia'];
-        $mat->materia = $materia['materia'];
-        $mat->grupo = $materia['grupo'];
+        $mat->clave = $materia['materia'];
+        $mat->nombre = $materia['nombre'];
 
         return $mat;
     }
-
-
+    
+    function getExistenciaMateria($id_materia, $clv_materia, $nom_materia){
+        global $connection;
+        $query = "SELECT * FROM materia WHERE id_materia = '$id_materia' 
+        AND clave LIKE '$clv_materia' and nombre LIKE '$nom_materia'; ";
+        $result = $connection->query($query);
+        if($result->num_rows == 1){  // Si encuentra algun registro entonces 
+            return true;
+        }else{
+            return false;
+        }
+    }
 /*
     function createMateria($materia) {
         global $connection;

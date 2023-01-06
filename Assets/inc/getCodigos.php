@@ -5,13 +5,11 @@ require 'database.php';
 $con = new Database();
 $pdo = $con->conectar();
 
-$campo = $_POST["campo"];
-
-//$sql = "SELECT cp, asentamiento FROM codigos_postales WHERE cp LIKE ? OR asentamiento LIKE ? ORDER BY cp ASC LIMIT 0, 10";
+$campo = $_POST["nom_materia"];
 
 $sql = "SELECT * FROM materia WHERE clave LIKE ? OR nombre LIKE ? ORDER BY nombre ASC LIMIT 0, 10";
 $query = $pdo->prepare($sql);
-$query->execute([$campo . '%', $campo . '%']);
+$query->execute(['%'.$campo.'%' , '%'.$campo.'%']);
 
 $html = "";
 

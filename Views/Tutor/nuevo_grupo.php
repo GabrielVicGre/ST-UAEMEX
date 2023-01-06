@@ -9,7 +9,6 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
 
 require_once "../../Controllers/Tutor/AlumInscritosController.php";
 $alumnInscritosController = new AlumInscritosController();
-
 $result = $alumnInscritosController->getMateriasTutorByIdUser($_SESSION['id_usuario']);
 
 ?>
@@ -63,39 +62,47 @@ $result = $alumnInscritosController->getMateriasTutorByIdUser($_SESSION['id_usua
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-8">
+                                                        <label for="campo" class="form-label">Materia:</label><br>
 
-                                                        <label for="campo" class="form-label">Nombre de la materia:</label>
-                                                        <input type="search" class="form-control" name="campo" id="campo" placeholder="Ingresa nombre o clave">
-                                                        <ul class="list-group" id="lista">
+                                                        <div class="btn-group w-100">
+                                                            <input type="text" class="form-control" style="border-radius: 8px 0 0 8px;" name="nom_materia" id="nom_materia" placeholder="Ingresa nombre o clave de la materia">
+                                                            <button class="btn text-white mx-1" onclick="limpiar()" style="background-color: #C1C1C1;"> Limpiar </button>
+                                                        </div>
+
+                                                        <ul class="list-group mt-2" id="lista">
                                                         </ul>
 
 
 
 
-
                                                     </div>
 
+
                                                     <div class="col-4">
-                                                        <label for="grupo" class="form-label">Ingresa el nombre del Grupo:</label>
-                                                        <input type="text" class="form-control" name="grupo" id="grupo" placeholder="Ingresa grupo" required>
+                                                        <label for="grupo" class="form-label">Grupo:</label><br>
+
+
+                                                        <input type="text" class="form-control" name="grupo" id="grupo" placeholder="Ingresa el nombre del grupo">
                                                         <input type="hidden" name="id_materia" id="id_materia">
+                                                        <input type="hidden" name="clv_materia" id="clv_materia">
+
                                                     </div>
 
                                                 </div>
                                             </div>
 
-                                            <div class="card text-center m-3 p-3 ">
+                                            <div class="card text-center my-4 mx-3 p-3 ">
                                                 <h5 class="card-title">Sube la lista de los alumnos inscritos</h5>
                                                 <p class="card-text">Asegurate que el archivo que subas tenga la extención .csv</p>
-                                                <div class="col-sm-6 m-auto">                                                   
-                                                            <?php
-                                                            include "layouts/drag_and_drop_csv.php";
-                                                            if (isset($_GET['msg'])) {
-                                                                if ($_GET['msg'] == 0) {
-                                                                    include 'layouts/upload_success.php';
-                                                                }
-                                                            }
-                                                            ?>
+                                                <div class="col-sm-6 m-auto">
+                                                    <?php
+                                                    include "layouts/drag_and_drop_csv.php";
+                                                    if (isset($_GET['msg'])) {
+                                                        if ($_GET['msg'] == 0) {
+                                                            include 'layouts/upload_success.php';
+                                                        }
+                                                    }
+                                                    ?>
                                                 </div>
                                             </div>
 

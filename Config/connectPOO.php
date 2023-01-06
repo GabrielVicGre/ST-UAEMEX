@@ -23,10 +23,13 @@
     $db = "bd_sistematutoria";
 
     $connection = new mysqli($host, $user, $pass, $db);
+    $connection->set_charset("utf8");
 
     if ($connection->connect_errno) {
-        echo "Fallo de conexion a la base de datos";
+        die("la conexión ha fallado: " . $connection->connect_error);
     }
+
+   
 
 /*
 $host = "localhost";

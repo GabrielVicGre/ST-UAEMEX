@@ -131,6 +131,29 @@ class AlumnoCRUD
         return $alumnos;
     }
 
+    function getAlumnosByIdGrupo($id_grupo){
+        global $connection;
+
+        $alumnos = array();
+
+        $query = "SELECT * FROM alumno a INNER JOIN alumnos_inscritos ai 
+        ON a.id_alumno = ai.id_alumno WHERE ai.id_grupo = '$id_grupo';";
+        
+        $result = $connection->query($query);
+
+        /*  if($result->num_rows == 0) {
+            throw new Exception();
+        }
+        */
+        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+            array_push($alumnos, $this->getAlumnoById($row['id_alumno']));
+        }
+
+        return $alumnos;
+    }
+
+
+
     function getAlumnosByLicenciatura($id_licenciatura)
     {
         global $connection;

@@ -8,12 +8,12 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != "Tutor") {
 
 require_once "../../Controllers/Tutor/estatusController.php";
 require_once "../../Controllers/Alumno/actividadesController.php";
-require_once "../../Controllers/Alumno/entregaController.php";
+//require_once "../../Controllers/Alumno/entregaController.php";
 require_once "../../Views/Graphics/PercentBar.php";
 
 $controller_estatus = new estatusController();
 $controller_actividades = new actividadesController();
-$controller_entrega = new entregaController();
+//$controller_entrega = new entregaController();
 
 ?>
 
@@ -37,7 +37,22 @@ $controller_entrega = new entregaController();
                     <?php include "layouts/user-layout.php"; ?>
                 </div>
                 De click en el nombre de uno de sus tutorados para conocer las actividades que ha entregado.
-                <div class="p-5" id="accordion">
+
+                <div class="mx-5 mt-3 py-3 bg-light text-center text-muted border">
+                    <h6> LISTA DE ALUMNOS TUTORADOS</h6>
+                </div>
+
+               <div class="mx-5 px-3 py-3 border">
+                    <div class="container text-center text-muted">
+                        <div class=row>
+                            <div class="col-3">NÚMERO DE CUENTA</div>
+                            <div class="col-3">NOMBRE DEL ALUMNO</div>
+                            <div class="col-6">PROCENTAJE DE AVANCE</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-5" id="accordion">
                     <?php
                     $alumnos = $controller_estatus->getAlumnos();
                     $count = 0;
@@ -46,7 +61,7 @@ $controller_entrega = new entregaController();
                         <div class="card">
                             <div class="card-header" id="heading<?php echo $count; ?>">
                                 <h5 class="mb-0">
-                                    <button class="btn container" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $count; ?>" aria-expanded="false" aria-controls="collapse<?php echo $count; ?>">
+                                    <button class="btn btn-style container" style="border: 0;" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $count; ?>" aria-expanded="false" aria-controls="collapse<?php echo $count; ?>">
                                         <div class=row>
                                             <div class="col-3"><?php echo $alumno->no_cuenta; ?></div>
                                             <div class="col-3"><?php echo $alumno->nombre; ?></div>
@@ -76,14 +91,14 @@ $controller_entrega = new entregaController();
                                                 <td class="col-1">
                                                     <?php
                                                     $status = $controller_actividades->getStatus($actividad->id_actividad, $alumno->id_alumno);
-
                                                     if ($status == true) {
                                                     ?>
-                                                        <i class="bi bi-check-square"></i>
+                                                        <h6><span class="badge rounded-pill text-bg-success">Entregado</span></h6>
+
                                                     <?php
                                                     } else {
                                                     ?>
-                                                        <i class="bi bi-square"></i>
+                                                        <h6><span class="badge rounded-pill  text-bg-secondary">Sin entregar</span></h6>
                                                     <?php
                                                     }
                                                     ?>

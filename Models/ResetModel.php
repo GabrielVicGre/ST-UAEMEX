@@ -6,6 +6,16 @@ class ResetModel {
 
     function ResetDataBase() {
         global $connection;
+
+        $query = "DELETE FROM alumnos_inscritos;";
+        $connection->query($query);
+
+        $query = "DELETE FROM grupo;";
+        $connection->query($query);
+
+        $query = "DELETE FROM materia;";
+        $connection->query($query);
+        
         $query = "DELETE FROM entrega_actividad;";
         $connection->query($query);
         $query = "DELETE FROM plan_trabajo;";
@@ -18,8 +28,8 @@ class ResetModel {
         $connection->query($query);
         $query = "DELETE FROM usuario WHERE id_usuario > 3;";
         $connection->query($query);
-        $query = "DELETE FROM materia;";
-        $connection->query($query);
+
+       
        // $query = "DELETE FROM usuario WHERE id_usuario > 3;";
        // $connection->query($query);
         header("Location: ../Views/Administrador/cargar_informacion.php");

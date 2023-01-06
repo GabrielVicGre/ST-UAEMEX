@@ -25,4 +25,13 @@ class estatusController {
             return array();
         }
     }
+
+    function getAlumnosPorGrupo($id_grupo) {
+        try{
+            $alumnos = $this->model_alumno->getAlumnosByIdGrupo($id_grupo);
+            return $alumnos;
+        } catch(Exception $e){
+            return array();
+        }
+    }
 }
